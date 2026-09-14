@@ -1,3 +1,6 @@
 Seproseg es una empresa de proveedores de sistemas y servicios de seguridad integral para su hogar, negocio y vehiculos.
 Esta es su pagina de facebook oficial https://www.facebook.com/SeprosegOficial/
 Sin emgargo si carece algo de identidad.
+La página tiene en mente dos tipos de clientes, con dos mentalidades cada uno. Uno es el cliente que no sabe que servicio/producto busca y quiere conocerlos. Y otro caso es alguien que sabe que necesita y está interesado en comparar nuestros servicios. Estos casos aplicados a proyectos residenciales o industriales. 
+Aunque los sistemas de seguridad pueden ser específicos para un tipo de proyecto pueden ser integrados en donde sea que el cliente los necesite. En otras palabras, los mismos servicios que se pueden ofrecer para una vivienda personal se pueden escalar a una industria y viceversa.
+Los productos más destacados son: sistema de cámaras CCTV, alarma contra intrusión, cercos electrificados, automatización de cocheras/accesos vehiculares, controles de acceso con tag/huella y/o código numérico. Rastreadores GPS para vehículos.
