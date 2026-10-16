@@ -18,28 +18,21 @@
   <!-- [[PENDIENTE: imagen 1200x630 JPG/PNG con logo o foto real]] <meta property="og:image" content="https://DOMINIO/img/og.jpg"> -->
   <meta name="twitter:card" content="summary">
 
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/instalaciones.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/pagina.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-cctv" viewBox="0 0 24 24"><path d="M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97"/><path d="M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z"/><path d="M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15"/><path d="M2 21v-4"/><path d="M7 9h.01"/></symbol>
-  <symbol id="i-alarma" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/><path d="M4 2C2.8 3.7 2 5.7 2 8"/><path d="M22 8c0-2.3-.8-4.3-2-6"/></symbol>
-  <symbol id="i-cerco" viewBox="0 0 24 24"><path d="M4 3 2 5v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/><path d="M6 8h4"/><path d="M6 18h4"/><path d="m12 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/><path d="M14 8h4"/><path d="M14 18h4"/><path d="m20 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/></symbol>
-  <symbol id="i-cochera" viewBox="0 0 24 24"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/><path d="M6 14h12"/><rect width="12" height="12" x="6" y="10"/></symbol>
-  <symbol id="i-acceso" viewBox="0 0 24 24"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></symbol>
-  <symbol id="i-gps" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-hogar" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
   <symbol id="i-negocio" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></symbol>
   <symbol id="i-industria" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></symbol>
   <symbol id="i-vehiculo" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
-  <symbol id="i-integral" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
-  <symbol id="i-medida" viewBox="0 0 24 24"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></symbol>
-  <symbol id="i-escalable" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
-  <symbol id="i-claridad" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M13 8H7"/><path d="M17 12H7"/></symbol>
   <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
   <symbol id="i-telefono" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
   <symbol id="i-flecha-izq" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
@@ -48,286 +41,291 @@
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
   <symbol id="i-externo" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
-  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
 </svg>
 
 <header class="site-header">
-  <div class="container header-inner">
-    <!-- [[PENDIENTE: logo oficial]] reemplazar por <img> SVG con alt="Seproseg" -->
-    <a class="logo" href="#inicio">Seproseg</a>
-    <nav class="nav" aria-label="Principal">
-      <ul>
-        <li><a href="#sistemas">Sistemas</a></li>
-        <li data-si-galeria hidden><a href="#trabajos">Trabajos</a></li>
-        <li><a href="#proceso">Cómo trabajamos</a></li>
-      </ul>
-    </nav>
-    <div class="header-actions">
-      <a class="link-wa" href="#contacto" data-wa="general" hidden><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>WhatsApp</a>
-      <a class="btn btn--primary btn--compact" href="#contacto" data-evento="header-cotizar">Cotizar</a>
-    </div>
-  </div>
+  <!-- [[PENDIENTE: logo oficial]] reemplazar por <img> SVG con alt="Seproseg" -->
+  <a class="logo" href="#inicio">Seproseg</a>
+  <a class="btn" href="#contacto" data-evento="header-cotizar">Solicitar cotización</a>
 </header>
 
 <main id="contenido">
 
+  <!-- HERO: dos campos que se juntan a media altura; el titular cruza la costura -->
   <section id="inicio" class="hero" aria-labelledby="h-inicio">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <h1 id="h-inicio">Seguridad integral para su hogar, negocio y vehículos</h1>
-        <p class="lead">Cámaras, alarmas, cercos electrificados, control de acceso y GPS, diseñados a la medida de su espacio. De una vivienda a una industria.</p>
-        <div class="hero-ctas">
-          <a class="btn btn--primary" href="#contacto" data-evento="hero-cotizar">Solicitar cotización</a>
-          <a class="btn btn--secondary" href="#elegir" data-evento="hero-no-se">No sé qué necesito<svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
-        </div>
-        <p class="small muted hero-micro">Asesoría sin compromiso.</p>
-      </div>
-      <div class="hero-panel">
-        <p class="hero-panel-title">Nuestros sistemas</p>
-        <ul>
-        <li><a href="#cctv"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-cctv"/></svg></span><span class="pn">Cámaras CCTV</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a href="#alarma"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-alarma"/></svg></span><span class="pn">Alarma contra intrusión</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a href="#cercos"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-cerco"/></svg></span><span class="pn">Cercos electrificados</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a href="#accesos-vehiculares"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-cochera"/></svg></span><span class="pn">Automatización de cocheras y accesos</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a href="#control-acceso"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-acceso"/></svg></span><span class="pn">Control de acceso</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a href="#gps"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-gps"/></svg></span><span class="pn">GPS vehicular</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        </ul>
-      </div>
+    <div class="hero-field hero-field--top" aria-hidden="true"></div>
+    <div class="hero-field hero-field--bottom" aria-hidden="true"></div>
+    <h1 id="h-inicio" class="hero-h"><span class="line line--top"><span data-line style="--i:0">Seguridad</span></span><span class="line line--bottom"><span data-line style="--i:1">a su medida</span></span></h1>
+    <div class="hero-foot">
+      <p class="hero-sub" data-rise style="--i:2">Cámaras, alarmas, cercos, accesos y GPS, diseñados como un solo sistema. Del hogar a la industria.</p>
+      <a class="hero-link" href="#escala" data-rise style="--i:3" data-evento="hero-no-se">¿No sabe qué necesita? Le orientamos<svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
     </div>
   </section>
 
-  <section id="por-que" class="pillars-sec" aria-labelledby="h-por-que">
-    <h2 id="h-por-que" class="sr-only">Por qué elegir Seproseg</h2>
-    <div class="container">
-      <div class="pillars">
-        <ul>
-        <li><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-integral"/></svg><div><strong>Integral</strong><p>Un solo proveedor para cámaras, alarmas, cercos, accesos y GPS.</p></div></li>
-        <li><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-medida"/></svg><div><strong>A su medida</strong><p>Diseñamos según su espacio y su riesgo real, no con paquetes cerrados.</p></div></li>
-        <li><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-escalable"/></svg><div><strong>Escalable</strong><p>Del hogar a la industria, y sistemas que crecen con usted.</p></div></li>
-        <li><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-claridad"/></svg><div><strong>Claridad</strong><p>Le explicamos cada opción en lenguaje simple.</p></div></li>
-        </ul>
-        <div class="pillars-extra">
-          <p data-mostrar-si="trayectoria" data-texto="trayectoria" data-pendiente="Años de experiencia / proyectos realizados" hidden>[[PENDIENTE: años de experiencia / proyectos]]</p>
-          <p data-mostrar-si="cobertura" data-pendiente="Cobertura geográfica" hidden>Atendemos en <span data-texto="cobertura">[[PENDIENTE: ciudades/regiones]]</span>.</p>
-        </div>
-      </div>
+  <!-- INTRO: enunciado en escalera -->
+  <section class="intro" aria-labelledby="h-intro">
+    <h2 id="h-intro" class="stair">
+      <span data-reveal style="--i:0">Del hogar</span>
+      <span data-reveal style="--i:1">a la industria</span>
+    </h2>
+    <div class="intro-text">
+      <p class="intro-statement" data-reveal style="--i:2">El mismo sistema que cuida una casa se amplía a un negocio, a una bodega o a una planta entera.</p>
+      <p class="intro-note" data-reveal style="--i:3">Lo diseñamos según su espacio y su riesgo real, y lo dejamos funcionando. Si no sabe por dónde empezar, se lo explicamos sin tecnicismos.</p>
     </div>
   </section>
 
-  <section id="elegir" class="section" aria-labelledby="h-elegir">
-    <div class="container">
-      <div class="section-head">
-        <h2 id="h-elegir">Le ayudamos a elegir</h2>
-        <p class="lead">Cuéntenos qué quiere proteger y le recomendamos el sistema adecuado. Sin tecnicismos y sin compromiso.</p>
+  <!-- SISTEMAS -->
+  <section id="sistemas" class="sistemas" aria-labelledby="h-sistemas">
+    <div class="sistemas-head">
+      <h2 id="h-sistemas" data-reveal>Seis sistemas, uno solo</h2>
+      <p class="lead" data-reveal style="--i:1">Elija uno o combínelos. Le recomendamos la configuración ideal para su espacio.</p>
+    </div>
+
+    <article class="sys" id="cctv">
+      <h3 class="sys-name" data-reveal>Cámaras CCTV</h3>
+      <div class="sys-body" data-reveal style="--i:1">
+        <p class="sys-benefit">Vea lo que pasa, en vivo y en grabación, desde su celular.</p>
+        <p>Instalamos cámaras para interiores y exteriores con grabación y acceso remoto. Usted decide qué zonas vigilar.</p>
+        <a class="sys-cta" href="#cotizar" data-producto="Cámaras CCTV">Cotizar este sistema<span class="sr-only">: Cámaras CCTV</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
+        <p class="sys-ideal"><strong>Ideal para:</strong> viviendas, comercios, almacenes e industrias.</p>
       </div>
-      <h3 class="needs-title">¿Qué le preocupa más?</h3>
-      <ul class="needs">
-        <li><a class="need" href="#alarma" data-evento="necesidad-entren"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-alarma"/></svg><span class="need-body"><span class="need-title">Que entren sin permiso</span><span class="need-line">Le recomendamos: <strong>Alarma contra intrusión + cercos electrificados</strong></span></span><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a class="need" href="#cctv" data-evento="necesidad-ver"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-cctv"/></svg><span class="need-body"><span class="need-title">Ver lo que pasa</span><span class="need-line">Le recomendamos: <strong>Cámaras CCTV</strong></span></span><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a class="need" href="#control-acceso" data-evento="necesidad-controlar"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-acceso"/></svg><span class="need-body"><span class="need-title">Controlar quién entra</span><span class="need-line">Le recomendamos: <strong>Control de acceso + automatización de accesos</strong></span></span><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a class="need" href="#gps" data-evento="necesidad-vehiculo"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-gps"/></svg><span class="need-body"><span class="need-title">Saber dónde está mi vehículo</span><span class="need-line">Le recomendamos: <strong>GPS vehicular</strong></span></span><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-      </ul>
-      <div class="needs-cta">
-        <a class="btn btn--primary" href="#cotizar" data-wa="asesoria" data-evento="asesoria">Quiero que me asesoren</a>
-        <p class="small muted">La recomendación final la hace nuestro equipo según su espacio.</p>
+    </article>
+
+    <article class="sys" id="alarma">
+      <!-- [[PENDIENTE: ¿notifica al celular/central?]] Si se confirma, descripción: "Sensores en puertas, ventanas y ambientes que activan la alarma y le notifican. Se configuran por zonas según su espacio." -->
+      <h3 class="sys-name" data-reveal>Alarma contra intrusión</h3>
+      <div class="sys-body" data-reveal style="--i:1">
+        <p class="sys-benefit">Aviso inmediato si alguien entra sin permiso.</p>
+        <p>Sensores en puertas, ventanas y ambientes que activan la alarma ante una intrusión. Se configuran por zonas según su espacio.</p>
+        <a class="sys-cta" href="#cotizar" data-producto="Alarma contra intrusión">Cotizar este sistema<span class="sr-only">: Alarma contra intrusión</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
+        <p class="sys-ideal"><strong>Ideal para:</strong> casas, oficinas, locales y plantas.</p>
       </div>
+    </article>
+
+    <article class="sys" id="cercos">
+      <h3 class="sys-name" data-reveal>Cercos electrificados</h3>
+      <div class="sys-body" data-reveal style="--i:1">
+        <p class="sys-benefit">Un perímetro que disuade antes de que intenten entrar.</p>
+        <p>Protección para muros y cercos perimetrales, instalada de forma profesional y conforme a la normativa vigente. Puede conectarse a su alarma.</p>
+        <a class="sys-cta" href="#cotizar" data-producto="Cercos electrificados">Cotizar este sistema<span class="sr-only">: Cercos electrificados</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
+        <p class="sys-ideal"><strong>Ideal para:</strong> viviendas, condominios, terrenos e industrias.</p>
+      </div>
+    </article>
+
+    <article class="sys" id="accesos-vehiculares">
+      <!-- [[PENDIENTE: confirmar tipos de portón que atienden]] -->
+      <h3 class="sys-name" data-reveal>Automatización de accesos</h3>
+      <div class="sys-body" data-reveal style="--i:1">
+        <p class="sys-benefit">Abra y cierre sin bajar de su vehículo.</p>
+        <p>Automatización de cocheras y accesos vehiculares: motores para portones corredizos y levadizos, con control remoto y opciones de acceso para residentes, personal o visitantes.</p>
+        <a class="sys-cta" href="#cotizar" data-producto="Automatización de cocheras y accesos">Cotizar este sistema<span class="sr-only">: Automatización de cocheras y accesos</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
+        <p class="sys-ideal"><strong>Ideal para:</strong> cocheras, condominios, estacionamientos y patios de maniobra.</p>
+      </div>
+    </article>
+
+    <article class="sys" id="control-acceso">
+      <!-- [[PENDIENTE: ¿registra entradas y salidas?]] Si se confirma, descripción: "Acceso con tarjeta o llavero (tag), huella digital o código numérico, con registro de entradas y salidas." -->
+      <h3 class="sys-name" data-reveal>Control de acceso</h3>
+      <div class="sys-body" data-reveal style="--i:1">
+        <p class="sys-benefit">Decida quién entra, por dónde y cuándo.</p>
+        <p>Acceso con tarjeta o llavero (tag), huella digital o código numérico.</p>
+        <a class="sys-cta" href="#cotizar" data-producto="Control de acceso">Cotizar este sistema<span class="sr-only">: Control de acceso</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
+        <p class="sys-ideal"><strong>Ideal para:</strong> edificios, oficinas, áreas restringidas y personal.</p>
+      </div>
+    </article>
+
+    <article class="sys" id="gps">
+      <!-- [[PENDIENTE: funciones extra (historial de rutas, alertas, apagado remoto) y suscripción]] -->
+      <h3 class="sys-name" data-reveal>GPS vehicular</h3>
+      <div class="sys-body" data-reveal style="--i:1">
+        <p class="sys-benefit">Ubique su vehículo en tiempo real.</p>
+        <p>Rastreo desde su celular para autos particulares y flotas de trabajo.</p>
+        <a class="sys-cta" href="#cotizar" data-producto="GPS vehicular">Cotizar este sistema<span class="sr-only">: GPS vehicular</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
+        <p class="sys-ideal"><strong>Ideal para:</strong> vehículos particulares, flotas de reparto y transporte.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ESCALA: la idea de la página. Elegir el espacio cambia el plano y la tabla. -->
+  <section id="escala" class="escala" aria-labelledby="h-escala">
+    <div class="escala-top">
+      <div class="escala-copy">
+        <h2 id="h-escala" data-reveal>Un sistema, tres escalas</h2>
+        <p class="lead" data-reveal style="--i:1">Los mismos sistemas se adaptan a una vivienda, a un negocio o a una planta. Elija su espacio y vea cómo cambia.</p>
+        <fieldset class="picker" data-reveal style="--i:2" hidden>
+          <legend>Su espacio</legend>
+          <div class="picker-opts">
+            <button type="button" class="pick" data-espacio="hogar" aria-pressed="true"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-hogar"/></svg>Hogar</button>
+            <button type="button" class="pick" data-espacio="negocio" aria-pressed="false"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-negocio"/></svg>Negocio</button>
+            <button type="button" class="pick" data-espacio="industria" aria-pressed="false"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-industria"/></svg>Industria</button>
+          </div>
+        </fieldset>
+        <p class="picker-sum" data-reveal style="--i:3" aria-live="polite" hidden></p>
+      </div>
+
+      <figure class="plan" data-reveal style="--i:2">
+        <svg class="plan-svg" viewBox="0 0 480 340" role="img" aria-labelledby="plan-t plan-d">
+          <title id="plan-t">Plano de un terreno que crece</title>
+          <desc id="plan-d">Esquema ilustrativo, no un proyecto real: una vivienda con cámaras y cerco; un negocio con bodega y estacionamiento; y una planta con varias naves y un patio de maniobras.</desc>
+          <g class="stage" data-for="hogar">
+            <rect class="p-plot" x="110" y="60" width="260" height="220"/>
+            <rect class="p-fence" x="110" y="60" width="260" height="220" fill="none"/>
+            <rect class="p-bldg" x="150" y="100" width="130" height="90"/>
+            <rect class="p-bldg2" x="290" y="140" width="56" height="50"/>
+            <rect class="p-gate" x="290" y="274" width="56" height="12"/>
+            <circle class="p-cam" cx="150" cy="100" r="9"/><circle class="p-cam" cx="346" cy="140" r="9"/><circle class="p-cam" cx="150" cy="250" r="9"/>
+            <rect class="p-acc" x="205" y="184" width="14" height="14"/>
+          </g>
+          <g class="stage" data-for="negocio">
+            <rect class="p-plot" x="60" y="50" width="360" height="240"/>
+            <rect class="p-fence" x="60" y="50" width="360" height="240" fill="none"/>
+            <rect class="p-bldg" x="100" y="90" width="170" height="110"/>
+            <rect class="p-bldg" x="290" y="90" width="90" height="110"/>
+            <rect class="p-bldg2" x="100" y="224" width="280" height="44"/>
+            <rect class="p-gate" x="400" y="150" width="12" height="70"/>
+            <circle class="p-cam" cx="100" cy="90" r="9"/><circle class="p-cam" cx="380" cy="90" r="9"/><circle class="p-cam" cx="100" cy="268" r="9"/><circle class="p-cam" cx="380" cy="268" r="9"/>
+            <rect class="p-acc" x="176" y="194" width="14" height="14"/><rect class="p-acc" x="324" y="194" width="14" height="14"/>
+          </g>
+          <g class="stage" data-for="industria">
+            <rect class="p-plot" x="20" y="30" width="440" height="280"/>
+            <rect class="p-fence" x="20" y="30" width="440" height="280" fill="none"/>
+            <rect class="p-bldg" x="50" y="60" width="170" height="90"/>
+            <rect class="p-bldg" x="240" y="60" width="190" height="90"/>
+            <rect class="p-bldg" x="50" y="176" width="110" height="104"/>
+            <rect class="p-bldg2" x="190" y="176" width="240" height="104"/>
+            <rect class="p-gate" x="214" y="298" width="70" height="12"/>
+            <circle class="p-cam" cx="50" cy="60" r="9"/><circle class="p-cam" cx="430" cy="60" r="9"/><circle class="p-cam" cx="50" cy="280" r="9"/><circle class="p-cam" cx="430" cy="280" r="9"/><circle class="p-cam" cx="230" cy="163" r="9"/><circle class="p-cam" cx="140" cy="163" r="9"/>
+            <rect class="p-acc" x="127" y="136" width="14" height="14"/><rect class="p-acc" x="316" y="136" width="14" height="14"/><rect class="p-acc" x="97" y="226" width="14" height="14"/>
+          </g>
+        </svg>
+        <figcaption class="plan-cap">
+          <span class="key"><i class="k-cam"></i>Cámaras</span>
+          <span class="key"><i class="k-acc"></i>Control de acceso</span>
+          <span class="key"><i class="k-gate"></i>Portón</span>
+          <span class="key"><i class="k-fence"></i>Cerco</span>
+          <span class="plan-note">Esquema ilustrativo.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <table class="escala-tabla" data-sel="">
+      <caption class="sr-only">Cómo se aplica cada sistema en un hogar, un negocio y una industria</caption>
+      <thead>
+        <tr><th scope="col"><span class="sr-only">Sistema</span></th><th scope="col" data-col="hogar">Hogar</th><th scope="col" data-col="negocio">Negocio</th><th scope="col" data-col="industria">Industria</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Cámaras CCTV</th><td data-col="hogar">Entradas, patio y cochera, desde el celular</td><td data-col="negocio">Caja, bodega y accesos, en vivo y en grabación</td><td data-col="industria">Perímetro, naves y patios, desde un solo lugar</td></tr>
+        <tr><th scope="row">Alarma contra intrusión</th><td data-col="hogar">Sensores en puertas y ventanas</td><td data-col="negocio">Zonas por local y por horario</td><td data-col="industria">Zonas por nave y por área</td></tr>
+        <tr><th scope="row">Cercos electrificados</th><td data-col="hogar">Los muros de su vivienda</td><td data-col="negocio">El perímetro del local o terreno</td><td data-col="industria">El perímetro completo de la planta</td></tr>
+        <tr><th scope="row">Cocheras y accesos</th><td data-col="hogar">La cochera, sin bajar del auto</td><td data-col="negocio">Estacionamiento y carga</td><td data-col="industria">Portones de patios de maniobra</td></tr>
+        <tr><th scope="row">Control de acceso</th><td data-col="hogar">Tag, huella o código para la familia</td><td data-col="negocio">Personal, áreas y horarios</td><td data-col="industria">Áreas restringidas, persona por persona</td></tr>
+        <tr><th scope="row">GPS vehicular</th><td data-col="hogar">Su auto, en tiempo real</td><td data-col="negocio">Los vehículos del negocio</td><td data-col="industria">La flota completa</td></tr>
+      </tbody>
+    </table>
+
+    <div class="escala-cta" data-reveal>
+      <a class="btn btn--big" href="#cotizar" data-espacio-cta data-evento="escala-cotizar">Solicitar cotización</a>
+      <a class="text-link" href="#cotizar" data-wa="asesoria" data-evento="asesoria">¿No sabe cuál es el suyo? Le asesoramos<svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
     </div>
   </section>
 
-  <section id="sistemas" class="section section--alt" aria-labelledby="h-sistemas">
-    <div class="container">
-      <div class="section-head">
-        <h2 id="h-sistemas">Nuestros sistemas</h2>
-        <p class="lead">Elija uno o combínelos. Le recomendamos la configuración ideal para su espacio.</p>
-      </div>
-      <div class="grid grid--products">
-        <article class="card card--product" id="cctv">
-          <div class="card-head">
-            <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-cctv"/></svg></span>
-            <h3>Cámaras CCTV</h3>
-          </div>
-          <p class="benefit">Vea lo que pasa, en vivo y en grabación, desde su celular.</p>
-          <p>Instalamos cámaras para interiores y exteriores con grabación y acceso remoto. Usted decide qué zonas vigilar.</p>
-          <p class="ideal"><strong>Ideal para:</strong> viviendas, comercios, almacenes e industrias.</p>
-          <a class="btn btn--secondary" href="#cotizar" data-producto="Cámaras CCTV">Cotizar este sistema<span class="sr-only">: Cámaras CCTV</span></a>
-        </article>
-        <article class="card card--product" id="alarma">
-          <!-- [[PENDIENTE: ¿notifica al celular/central?]] Si se confirma, descripción: "Sensores en puertas, ventanas y ambientes que activan la alarma y le notifican. Se configuran por zonas según su espacio." -->
-          <div class="card-head">
-            <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-alarma"/></svg></span>
-            <h3>Alarma contra intrusión</h3>
-          </div>
-          <p class="benefit">Aviso inmediato si alguien entra sin permiso.</p>
-          <p>Sensores en puertas, ventanas y ambientes que activan la alarma ante una intrusión. Se configuran por zonas según su espacio.</p>
-          <p class="ideal"><strong>Ideal para:</strong> casas, oficinas, locales y plantas.</p>
-          <a class="btn btn--secondary" href="#cotizar" data-producto="Alarma contra intrusión">Cotizar este sistema<span class="sr-only">: Alarma contra intrusión</span></a>
-        </article>
-        <article class="card card--product" id="cercos">
-          <div class="card-head">
-            <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-cerco"/></svg></span>
-            <h3>Cercos electrificados</h3>
-          </div>
-          <p class="benefit">Un perímetro que disuade antes de que intenten entrar.</p>
-          <p>Protección para muros y cercos perimetrales, instalada de forma profesional y conforme a la normativa vigente. Puede conectarse a su alarma.</p>
-          <p class="ideal"><strong>Ideal para:</strong> viviendas, condominios, terrenos e industrias.</p>
-          <a class="btn btn--secondary" href="#cotizar" data-producto="Cercos electrificados">Cotizar este sistema<span class="sr-only">: Cercos electrificados</span></a>
-        </article>
-        <article class="card card--product" id="accesos-vehiculares">
-          <!-- [[PENDIENTE: confirmar tipos de portón que atienden]] -->
-          <div class="card-head">
-            <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-cochera"/></svg></span>
-            <h3>Automatización de cocheras y accesos vehiculares</h3>
-          </div>
-          <p class="benefit">Abra y cierre sin bajar de su vehículo.</p>
-          <p>Motores para portones corredizos y levadizos, con control remoto y opciones de acceso para residentes, personal o visitantes.</p>
-          <p class="ideal"><strong>Ideal para:</strong> cocheras, condominios, estacionamientos y patios de maniobra.</p>
-          <a class="btn btn--secondary" href="#cotizar" data-producto="Automatización de cocheras y accesos">Cotizar este sistema<span class="sr-only">: Automatización de cocheras y accesos</span></a>
-        </article>
-        <article class="card card--product" id="control-acceso">
-          <!-- [[PENDIENTE: ¿registra entradas y salidas?]] Si se confirma, descripción: "Acceso con tarjeta o llavero (tag), huella digital o código numérico, con registro de entradas y salidas." -->
-          <div class="card-head">
-            <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-acceso"/></svg></span>
-            <h3>Control de acceso con tag, huella o código</h3>
-          </div>
-          <p class="benefit">Decida quién entra, por dónde y cuándo.</p>
-          <p>Acceso con tarjeta o llavero (tag), huella digital o código numérico.</p>
-          <p class="ideal"><strong>Ideal para:</strong> edificios, oficinas, áreas restringidas y personal.</p>
-          <a class="btn btn--secondary" href="#cotizar" data-producto="Control de acceso">Cotizar este sistema<span class="sr-only">: Control de acceso</span></a>
-        </article>
-        <article class="card card--product" id="gps">
-          <!-- [[PENDIENTE: funciones extra (historial de rutas, alertas, apagado remoto) y suscripción]] -->
-          <div class="card-head">
-            <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-gps"/></svg></span>
-            <h3>GPS vehicular</h3>
-          </div>
-          <p class="benefit">Ubique su vehículo en tiempo real.</p>
-          <p>Rastreo desde su celular para autos particulares y flotas de trabajo.</p>
-          <p class="ideal"><strong>Ideal para:</strong> vehículos particulares, flotas de reparto y transporte.</p>
-          <a class="btn btn--secondary" href="#cotizar" data-producto="GPS vehicular">Cotizar este sistema<span class="sr-only">: GPS vehicular</span></a>
-        </article>
-      </div>
-      <div class="scale-band is-dark">
-        <p><strong>Del hogar a la industria, el mismo respaldo.</strong> Lo que protege una vivienda se amplía a un almacén o una planta, y los sistemas se integran entre sí: cámaras, alarmas, accesos y GPS trabajando juntos.</p>
-        <ul class="spaces">
-        <li class="space"><span class="icon-box icon-box--dark"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-hogar"/></svg></span><div><h3>Para su hogar</h3><p>Vea lo que pasa en casa desde su celular, reciba un aviso si alguien intenta entrar y abra la cochera sin bajar del auto.</p></div></li>
-        <li class="space"><span class="icon-box icon-box--dark"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-negocio"/></svg></span><div><h3>Para su negocio o industria</h3><p>Proteja su perímetro, controle quién entra a cada área y supervise varias sedes o puntos desde un solo lugar.</p></div></li>
-        <li class="space"><span class="icon-box icon-box--dark"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-vehiculo"/></svg></span><div><h3>Para sus vehículos</h3><p>Sepa dónde está su vehículo o su flota en todo momento, desde su celular.</p></div></li>
-        </ul>
-      </div>
+  <!-- PROCESO: el itinerario impreso en un talón -->
+  <section id="proceso" class="proceso" aria-labelledby="h-proceso">
+    <div class="proceso-copy">
+      <h2 id="h-proceso" data-reveal>Así trabajamos</h2>
+      <p class="lead" data-reveal style="--i:1">Cinco pasos, de su primer mensaje a un sistema funcionando. Usted sabe qué sigue en cada uno.</p>
     </div>
-  </section>
-
-  <section id="trabajos" class="section" aria-labelledby="h-trabajos">
-    <div class="container">
-      <div class="section-head">
-        <h2 id="h-trabajos">Nuestros trabajos</h2>
-        <p class="lead" data-galeria="con-fotos" hidden>Instalaciones reales realizadas por nuestro equipo.</p>
-      </div>
-      <div class="gallery-empty" data-galeria="vacia">
-        <div class="mosaic" aria-hidden="true">
-          <span><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-cctv"/></svg></span><span><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-cerco"/></svg></span><span><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-acceso"/></svg></span>
-        </div>
-        <div class="gallery-empty-text">
-          <p>Conozca instalaciones realizadas por nuestro equipo en nuestra página de Facebook.</p>
-          <a class="btn btn--secondary" href="https://www.facebook.com/SeprosegOficial/" target="_blank" rel="noopener noreferrer" data-evento="facebook">Vea nuestros trabajos en Facebook<svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-externo"/></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
-        </div>
-      </div>
-      <div class="filters" role="group" aria-label="Filtrar trabajos por tipo de espacio" hidden></div>
-      <ul class="gallery" data-galeria="con-fotos" hidden></ul>
-      <div class="sr-only" id="galeria-live" aria-live="polite"></div>
-      <button class="btn btn--secondary gallery-more" type="button" data-evento="galeria-mas" hidden>Ver más trabajos</button>
-      <p class="gallery-fb" data-galeria="con-fotos" hidden><a class="link-arrow" href="https://www.facebook.com/SeprosegOficial/" target="_blank" rel="noopener noreferrer" data-evento="facebook">Vea nuestros trabajos en Facebook<svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-externo"/></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
-      <div data-pendiente="Fotos de instalaciones: agregar archivos en assets/instalaciones/ y registrarlos en js/instalaciones.js" hidden></div>
-    </div>
-  </section>
-
-  <section id="proceso" class="section section--alt" aria-labelledby="h-proceso">
-    <div class="container">
-      <div class="section-head">
-        <h2 id="h-proceso">Así trabajamos</h2>
-      </div>
-      <ol class="steps">
-        <li class="step">
-          <h3>Nos cuenta su necesidad</h3>
-          <p>Por WhatsApp, llamada o formulario.</p>
-        </li>
-        <li class="step">
-          <h3>Evaluamos su espacio</h3>
-          <p>Identificamos riesgos y puntos críticos. <span data-mostrar-si="procesoVisita" data-texto="procesoVisita" data-pendiente="¿Visita técnica gratuita?" hidden>[[PENDIENTE: ¿visita técnica gratuita?]]</span></p>
-        </li>
-        <li class="step">
-          <h3>Le proponemos una solución</h3>
-          <p>Cotización clara, con lo que incluye.</p>
-        </li>
-        <li class="step">
-          <h3>Instalamos y configuramos</h3>
-          <p>Le dejamos todo funcionando y le enseñamos a usarlo.</p>
-        </li>
-        <li class="step">
-          <h3>Le acompañamos</h3>
-          <p>Soporte después de la instalación. <span data-mostrar-si="procesoSoporte" data-texto="procesoSoporte" data-pendiente="Alcance del soporte" hidden>[[PENDIENTE: alcance]]</span></p>
-        </li>
+    <div class="slip" data-reveal style="--i:1">
+      <h3 class="slip-day">Primero</h3>
+      <ol class="slip-rows">
+        <li><span class="slip-what">Nos cuenta su necesidad<small>Por WhatsApp, llamada o formulario.</small></span><span class="slip-dots" aria-hidden="true"></span><span class="slip-who">Usted</span></li>
+        <li><span class="slip-what">Evaluamos su espacio<small>Identificamos riesgos y puntos críticos. <span data-mostrar-si="procesoVisita" data-texto="procesoVisita" data-pendiente="¿Visita técnica gratuita?" hidden>[[PENDIENTE: ¿visita técnica gratuita?]]</span></small></span><span class="slip-dots" aria-hidden="true"></span><span class="slip-who">Seproseg</span></li>
       </ol>
+      <h3 class="slip-day">Después</h3>
+      <ol class="slip-rows">
+        <li><span class="slip-what">Le proponemos una solución<small>Cotización clara, con lo que incluye.</small></span><span class="slip-dots" aria-hidden="true"></span><span class="slip-who">Seproseg</span></li>
+        <li><span class="slip-what">Instalamos y configuramos<small>Le dejamos todo funcionando y le enseñamos a usarlo.</small></span><span class="slip-dots" aria-hidden="true"></span><span class="slip-who">Seproseg</span></li>
+      </ol>
+      <h3 class="slip-day">Siempre</h3>
+      <ol class="slip-rows">
+        <li><span class="slip-what">Le acompañamos<small>Soporte después de la instalación. <span data-mostrar-si="procesoSoporte" data-texto="procesoSoporte" data-pendiente="Alcance del soporte" hidden>[[PENDIENTE: alcance]]</span></small></span><span class="slip-dots" aria-hidden="true"></span><span class="slip-who">Seproseg</span></li>
+      </ol>
+      <p class="slip-total"><span>Usted se queda con un sistema funcionando y sabiendo usarlo</span><span>Listo</span></p>
     </div>
   </section>
 
-  <section id="preguntas" class="section" aria-labelledby="h-preguntas" hidden data-pendiente="Preguntas frecuentes (sin respuestas confirmadas)">
-    <div class="container faq-wrap">
-      <div class="section-head">
-        <h2 id="h-preguntas">Preguntas frecuentes</h2>
-      </div>
+  <!-- TRABAJOS (galería; vacía hasta que el cliente entregue fotos) -->
+  <section id="trabajos" class="trabajos" aria-labelledby="h-trabajos">
+    <div class="trabajos-head">
+      <h2 id="h-trabajos" data-reveal>Nuestros trabajos</h2>
+      <p class="lead" data-galeria="con-fotos" hidden>Instalaciones reales realizadas por nuestro equipo.</p>
+    </div>
+    <div class="gallery-empty" data-galeria="vacia">
+      <p class="lead" data-reveal>Conozca instalaciones realizadas por nuestro equipo en nuestra página de Facebook.</p>
+      <a class="big-link" href="https://www.facebook.com/SeprosegOficial/" target="_blank" rel="noopener noreferrer" data-evento="facebook" data-reveal style="--i:1">Ver trabajos en Facebook<svg class="icon" width="40" height="40" aria-hidden="true" focusable="false"><use href="#i-externo"/></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrar trabajos por tipo de espacio" hidden></div>
+    <ul class="gallery" data-galeria="con-fotos" hidden></ul>
+    <div class="sr-only" id="galeria-live" aria-live="polite"></div>
+    <button class="btn btn--ghost gallery-more" type="button" data-evento="galeria-mas" hidden>Ver más trabajos</button>
+    <p class="gallery-fb" data-galeria="con-fotos" hidden><a class="text-link" href="https://www.facebook.com/SeprosegOficial/" target="_blank" rel="noopener noreferrer" data-evento="facebook">Ver más trabajos en Facebook<svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-externo"/></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+    <div data-pendiente="Fotos de instalaciones: agregar archivos en assets/instalaciones/ y registrarlos en js/instalaciones.js" hidden></div>
+  </section>
+
+  <section id="preguntas" class="preguntas" aria-labelledby="h-preguntas" hidden data-pendiente="Preguntas frecuentes (sin respuestas confirmadas)">
+    <div class="faq-wrap">
+      <h2 id="h-preguntas">Preguntas frecuentes</h2>
       <details class="faq" hidden data-mostrar-si="faq.visitas" data-pendiente="Respuesta: visitas de evaluación">
-        <summary>¿Hacen visitas de evaluación?<svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+        <summary>¿Hacen visitas de evaluación?</summary>
         <p data-texto="faq.visitas">[[PENDIENTE]]</p>
       </details>
       <details class="faq" hidden data-mostrar-si="faq.garantia" data-pendiente="Respuesta: garantía">
-        <summary>¿Qué garantía tienen los equipos y la instalación?<svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+        <summary>¿Qué garantía tienen los equipos y la instalación?</summary>
         <p data-texto="faq.garantia">[[PENDIENTE]]</p>
       </details>
       <details class="faq" hidden data-mostrar-si="faq.ampliar" data-pendiente="Confirmar respuesta: ampliar el sistema">
-        <summary>¿Puedo ampliar mi sistema después?<svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+        <summary>¿Puedo ampliar mi sistema después?</summary>
         <p>Sí. Nuestros sistemas están pensados para crecer: puede empezar con lo esencial y agregar cámaras, sensores o accesos cuando lo necesite.</p>
       </details>
       <details class="faq" hidden data-mostrar-si="faq.zona" data-pendiente="Respuesta: zona de atención">
-        <summary>¿Atienden en mi zona?<svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+        <summary>¿Atienden en mi zona?</summary>
         <p data-texto="faq.zona">[[PENDIENTE]]</p>
       </details>
       <details class="faq" hidden data-mostrar-si="faq.pagos" data-pendiente="Respuesta: facilidades de pago">
-        <summary>¿Ofrecen facilidades de pago?<svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+        <summary>¿Ofrecen facilidades de pago?</summary>
         <p data-texto="faq.pagos">[[PENDIENTE]]</p>
       </details>
     </div>
   </section>
 
-  <section id="contacto" class="section contact is-dark" aria-labelledby="h-contacto">
-    <div class="container contact-grid">
-      <div class="contact-info">
-        <h2 id="h-contacto">Hablemos de su seguridad</h2>
-        <p class="lead on-dark-muted">Cuéntenos qué necesita proteger y le respondemos con una propuesta a su medida.</p>
-        <div class="contact-actions">
-          <a class="btn btn--primary" href="#cotizar" data-wa="general" data-evento="contacto-whatsapp" hidden><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>Escribir por WhatsApp</a>
-          <a class="btn btn--ghost" href="#cotizar" data-tel data-evento="contacto-llamar" hidden><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-telefono"/></svg>Llamar</a>
-        </div>
-        <ul class="contact-data">
-          <li hidden data-mostrar-si="telefonoVisible" data-pendiente="Teléfono">Teléfono: <span data-texto="telefonoVisible">[[PENDIENTE]]</span></li>
-          <li hidden data-mostrar-si="correo" data-pendiente="Correo">Correo: <a data-correo href="#">[[PENDIENTE]]</a></li>
-          <li hidden data-mostrar-si="direccion" data-pendiente="Dirección">Dirección: <span data-texto="direccion">[[PENDIENTE]]</span></li>
-          <li hidden data-mostrar-si="horario" data-pendiente="Horario">Horario: <span data-texto="horario">[[PENDIENTE]]</span></li>
-        </ul>
-        <div class="includes">
-          <p class="includes-title">Qué incluye trabajar con Seproseg</p>
-          <ul class="checklist">
-            <li hidden data-mostrar-si="confirmado.evaluacion" data-pendiente="Confirmar evaluación antes de cotizar"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Evaluación de su espacio antes de cotizar</span></li>
-            <li hidden data-mostrar-si="confirmado.instalacion" data-pendiente="Confirmar instalación por técnicos especializados"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Instalación por técnicos especializados</span></li>
-            <li><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Configuración y capacitación de uso</span></li>
-            <li hidden data-mostrar-si="confirmado.soporte" data-pendiente="Confirmar soporte posterior"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Soporte después de la instalación</span></li>
-            <li hidden data-mostrar-si="garantia" data-pendiente="Alcance y plazo de la garantía"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Garantía: <span data-texto="garantia">[[PENDIENTE: alcance y plazo]]</span></span></li>
-          </ul>
-        </div>
-      </div>
-      <div class="contact-form form-card">
+  <!-- CONTACTO: filas grandes con los canales reales y el talón de cotización -->
+  <section id="contacto" class="contacto" aria-labelledby="h-contacto">
+    <h2 id="h-contacto" class="contacto-h" data-reveal>Hablemos de su seguridad</h2>
+    <div class="rows">
+      <a class="row-link" href="#cotizar" data-wa="general" data-evento="contacto-whatsapp" hidden><span>Escribir por WhatsApp</span><svg class="icon" width="40" height="40" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
+      <a class="row-link" href="#cotizar" data-tel data-evento="contacto-llamar" hidden><span>Llamar <span data-texto="telefonoVisible"></span></span><svg class="icon" width="40" height="40" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
+      <ul class="contact-data">
+        <li hidden data-mostrar-si="correo" data-pendiente="Correo"><a data-correo href="#">[[PENDIENTE]]</a></li>
+        <li hidden data-mostrar-si="direccion" data-pendiente="Dirección"><span data-texto="direccion">[[PENDIENTE]]</span></li>
+        <li hidden data-mostrar-si="horario" data-pendiente="Horario"><span data-texto="horario">[[PENDIENTE]]</span></li>
+        <li hidden data-mostrar-si="cobertura" data-pendiente="Cobertura geográfica">Atendemos en <span data-texto="cobertura">[[PENDIENTE: ciudades/regiones]]</span></li>
+        <li hidden data-mostrar-si="trayectoria" data-pendiente="Años de experiencia / proyectos realizados"><span data-texto="trayectoria">[[PENDIENTE: años de experiencia / proyectos]]</span></li>
+      </ul>
+    </div>
+
+    <div class="coupon" data-reveal>
+      <div class="coupon-side">
         <h3 id="cotizar" tabindex="-1">Solicitar cotización</h3>
-        <p class="muted form-intro">Indíquenos el sistema que busca y las características de su espacio. Le enviamos una cotización clara, con lo que incluye.</p>
+        <p>Indíquenos el sistema que busca y las características de su espacio. Le enviamos una cotización clara, con lo que incluye.</p>
+        <ul class="checklist">
+          <li hidden data-mostrar-si="confirmado.evaluacion" data-pendiente="Confirmar evaluación antes de cotizar">Evaluación de su espacio antes de cotizar</li>
+          <li hidden data-mostrar-si="confirmado.instalacion" data-pendiente="Confirmar instalación por técnicos especializados">Instalación por técnicos especializados</li>
+          <li>Configuración y capacitación de uso</li>
+          <li hidden data-mostrar-si="confirmado.soporte" data-pendiente="Confirmar soporte posterior">Soporte después de la instalación</li>
+          <li hidden data-mostrar-si="garantia" data-pendiente="Alcance y plazo de la garantía">Garantía: <span data-texto="garantia">[[PENDIENTE: alcance y plazo]]</span></li>
+        </ul>
+      </div>
+      <div class="coupon-form">
         <form id="form-cotizacion" novalidate>
           <div class="form-grid">
             <div class="field">
@@ -377,47 +375,63 @@
             </div>
           </div>
           <div class="form-status" role="status" tabindex="-1" hidden></div>
-          <button class="btn btn--primary" type="submit" data-evento="form-enviar">Enviar solicitud</button>
-          <noscript><p class="small muted">Para enviar este formulario necesita tener JavaScript activado.</p></noscript>
-          <p class="small muted form-note">Usaremos sus datos solo para responder su solicitud. <a data-mostrar-si="privacidadUrl" data-pendiente="Enlace a política de privacidad" hidden>Política de privacidad</a></p>
+          <button class="submit" type="submit" data-evento="form-enviar">Enviar solicitud</button>
+          <noscript><p class="note">Para enviar este formulario necesita tener JavaScript activado.</p></noscript>
+          <p class="note form-note">Usaremos sus datos solo para responder su solicitud. <a data-mostrar-si="privacidadUrl" data-pendiente="Enlace a política de privacidad" hidden>Política de privacidad</a></p>
         </form>
       </div>
-    </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer is-dark">
-  <div class="container">
-    <div class="footer-row">
-      <div class="footer-brand">
-        <p class="logo-foot">Seproseg</p>
-        <p class="small on-dark-muted">Seguridad integral para su hogar, negocio y vehículos.</p>
-      </div>
-      <nav aria-label="Pie de página">
-        <ul>
-          <li><a href="#sistemas">Sistemas</a></li>
-          <li data-si-galeria hidden><a href="#trabajos">Trabajos</a></li>
-          <li><a href="#proceso">Cómo trabajamos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-      <a class="footer-fb" href="https://www.facebook.com/SeprosegOficial/" target="_blank" rel="noopener noreferrer">Facebook<svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-externo"/></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
+<footer class="site-footer">
+  <div class="foot-cols">
+    <nav aria-label="Pie de página">
+      <p class="foot-title">Seproseg</p>
+      <ul>
+        <li><a href="#sistemas">Sistemas</a></li>
+        <li><a href="#escala">Escalas</a></li>
+        <li><a href="#proceso">Cómo trabajamos</a></li>
+        <li data-si-galeria hidden><a href="#trabajos">Trabajos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="foot-title">Contacto</p>
+      <ul>
+        <li hidden data-mostrar-si="telefonoVisible" data-pendiente="Teléfono"><span data-texto="telefonoVisible">[[PENDIENTE]]</span></li>
+        <li hidden data-mostrar-si="correo" data-pendiente="Correo"><a data-correo href="#">[[PENDIENTE]]</a></li>
+        <li hidden data-mostrar-si="direccion" data-pendiente="Dirección"><span data-texto="direccion">[[PENDIENTE]]</span></li>
+        <li hidden data-mostrar-si="horario" data-pendiente="Horario"><span data-texto="horario">[[PENDIENTE]]</span></li>
+      </ul>
     </div>
-    <p class="small on-dark-muted copy">© <span data-anio>2026</span> Seproseg. <span data-mostrar-si="razonSocial" data-texto="razonSocial" data-pendiente="Razón social / identificador fiscal" hidden>[[PENDIENTE: razón social / RUC]]</span></p>
+    <div>
+      <p class="foot-title">Síganos</p>
+      <ul>
+        <li><a class="footer-fb" href="https://www.facebook.com/SeprosegOficial/" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only"> (se abre en una pestaña nueva)</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-title">Qué hacemos</p>
+      <p>Seguridad integral para su hogar, negocio y vehículos.</p>
+    </div>
+  </div>
+  <div class="foot-mark">
+    <p class="foot-word" aria-hidden="true">Seproseg</p>
+    <p class="foot-legal">© <span data-anio>2026</span> Seproseg. <span data-mostrar-si="razonSocial" data-texto="razonSocial" data-pendiente="Razón social / identificador fiscal" hidden>[[PENDIENTE: razón social / RUC]]</span></p>
   </div>
 </footer>
 
-<div class="contact-bar is-dark" role="region" aria-label="Contacto rápido" hidden>
-  <a class="btn btn--primary" href="#cotizar" data-wa="general" data-evento="barra-whatsapp" hidden><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+<div class="contact-bar" role="region" aria-label="Contacto rápido" hidden>
+  <a class="btn" href="#cotizar" data-wa="general" data-evento="barra-whatsapp" hidden><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>WhatsApp</a>
   <a class="btn btn--ghost" href="#cotizar" data-tel data-evento="barra-llamar" hidden><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-telefono"/></svg>Llamar</a>
 </div>
 
-<dialog id="visor" class="lightbox is-dark" aria-labelledby="visor-titulo">
+<dialog id="visor" class="lightbox" aria-labelledby="visor-titulo">
   <div class="lb-top">
     <p class="lb-count"></p>
-    <button class="btn btn--ghost btn--compact" type="button" data-lb="cerrar"><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-cerrar"/></svg>Cerrar</button>
+    <button class="btn btn--ghost" type="button" data-lb="cerrar"><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-cerrar"/></svg>Cerrar</button>
   </div>
   <figure>
     <img alt="" src="data:,">
@@ -429,7 +443,7 @@
   <div class="lb-actions">
     <button class="btn btn--ghost" type="button" data-lb="anterior"><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha-izq"/></svg>Anterior</button>
     <button class="btn btn--ghost" type="button" data-lb="siguiente">Siguiente<svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></button>
-    <button class="btn btn--primary" type="button" data-lb="cotizar" data-evento="galeria-cotizar">Cotizar algo similar<span class="sr-only lb-cot-titulo"></span></button>
+    <button class="btn" type="button" data-lb="cotizar" data-evento="galeria-cotizar">Cotizar algo similar<span class="sr-only lb-cot-titulo"></span></button>
   </div>
 </dialog>
 </body>

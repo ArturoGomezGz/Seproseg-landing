@@ -24,3 +24,4 @@ Cambios puramente técnicos (bugs, refactors) pueden ir directo a `desarrollador
 ## Convenciones
 - Todo en español.
 - Sitio estático, ligero, móvil primero; sin dependencias ni build step salvo que una spec lo justifique.
+- El diseño visual vigente es `docs/diseno/specs/003-rediseno-taste.md` (skill `design-taste-frontend`, instalada en `.claude/skills/`). Para cambios visuales usarla y pasar `inspect.mjs` (en Chrome como root hace falta `--no-sandbox`).

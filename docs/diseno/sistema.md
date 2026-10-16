@@ -1,5 +1,6 @@
 # Sistema de diseño — Seproseg
 
+> **Superado en lo visual por `specs/003-rediseno-taste.md` (2026-10-16): paleta de marca conservada, tipografía, layout y componentes cambiaron.** Se conserva como referencia de accesibilidad y contrastes.
 > Versión 2.0 — 2026-10-16. Responsable: experto UI/UX.
 > Fuente de marca: `docs/marca/plataforma.md` (§7 dirección visual). Si el cliente entrega logo/colores oficiales, **esos valores reemplazan la paleta de este documento** y se re-verifican los contrastes.
 > El desarrollador **no inventa valores**: todo color, tamaño, espacio, radio o sombra sale de aquí.
