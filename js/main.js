@@ -2,9 +2,9 @@
    Deje "" o false lo que no esté confirmado por el cliente: el elemento no se mostrará.
    Vista de revisión (muestra lo pendiente marcado): agregar ?revision=1 a la URL. */
 const CONFIG = {
-  whatsapp: "",        // Solo dígitos con código de país, sin + ni espacios. Ej.: "5190000000" [[PENDIENTE]]
-  telefono: "",        // Formato internacional para el enlace tel:. Ej.: "+5190000000" [[PENDIENTE]]
-  telefonoVisible: "", // Como se muestra al público. Ej.: "900 000 000" [[PENDIENTE]]
+  whatsapp: "523318951510",      // Solo dígitos con código de país, sin + ni espacios. Ej.: "5190000000"
+  telefono: "+523318951510",      // Formato internacional para el enlace tel:. Ej.: "+5190000000"
+  telefonoVisible: "33 1895 1510", // Como se muestra al público. Ej.: "900 000 000"
   correo: "",          // [[PENDIENTE]]
   direccion: "",       // [[PENDIENTE]]
   horario: "",         // [[PENDIENTE]]
@@ -86,8 +86,11 @@ const CONFIG = {
   var faqOn = Object.keys(CONFIG.faq).some(function (k) { return CONFIG.faq[k]; });
   var faqSec = $("#preguntas");
   if (faqOn) faqSec.hidden = false;
-  var barCot = $("[data-bar-cotizar]");
-  if (CONFIG.whatsapp || CONFIG.telefono) barCot.hidden = true;
+  var bar = $(".contact-bar");
+  if (CONFIG.whatsapp || CONFIG.telefono) {
+    bar.hidden = false;
+    root.classList.add("has-bar");
+  }
 
   /* --- Modo revisión --- */
   if (/[?&]revision=1(&|$)/.test(location.search)) {
@@ -97,30 +100,7 @@ const CONFIG = {
     });
   }
 
-  /* --- Menú móvil --- */
   var header = $(".site-header");
-  var toggle = $(".menu-toggle");
-  var toggleTxt = $(".sr-only", toggle);
-  var toggleUse = $("use", toggle);
-  function setMenu(open) {
-    header.classList.toggle("nav-open", open);
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    toggleTxt.textContent = open ? "Cerrar menú" : "Abrir menú";
-    toggleUse.setAttribute("href", open ? "#i-cerrar" : "#i-menu");
-  }
-  toggle.addEventListener("click", function () {
-    setMenu(toggle.getAttribute("aria-expanded") !== "true");
-  });
-  $$("#menu a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
-  doc.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
-      setMenu(false);
-      toggle.focus();
-    }
-  });
-  var mq = window.matchMedia("(min-width: 64em)");
-  function onMq() { if (mq.matches) setMenu(false); }
-  if (mq.addEventListener) mq.addEventListener("change", onMq); else mq.addListener(onMq);
 
   /* --- Formulario: utilidades --- */
   var form = $("#form-cotizacion");
@@ -133,39 +113,15 @@ const CONFIG = {
     if (r) r.checked = true;
   }
 
-  /* --- Asistente Ruta A --- */
-  var asesoria = $("[data-wa='asesoria']");
-  var live = $("#reco-live");
-  var recoItems = $$(".reco li");
-  var ESPACIO = { "Casa": "Hogar", "Negocio": "Negocio", "Industria": "Industria", "Vehículo": "Vehículo/flota" };
+  /* --- Quiero que me asesoren (sin WhatsApp: marca "No estoy seguro") --- */
+  $("[data-wa='asesoria']").addEventListener("click", function () {
+    if (!CONFIG.whatsapp) checkSistema("No estoy seguro");
+  });
+
   function val(name) {
     var r = $('input[name="' + name + '"]:checked');
     return r ? r.value : "";
   }
-  function onAssist(e) {
-    var p = val("proteger");
-    var q = val("preocupa");
-    if (e && e.target.name === "preocupa") {
-      recoItems.forEach(function (li) {
-        var on = li.getAttribute("data-preocupa") === q;
-        li.classList.toggle("is-activa", on);
-        if (on) live.textContent = "Recomendación: " + q + ", " + $(".reco-sys", li).textContent;
-      });
-    }
-    if (CONFIG.whatsapp) {
-      var m = MSG.asesoria;
-      if (p) m += " Quiero proteger: " + p + ".";
-      if (q) m += " Me preocupa: " + q + ".";
-      asesoria.href = waUrl(m);
-    }
-  }
-  $$("input[name='proteger'], input[name='preocupa']").forEach(function (i) { i.addEventListener("change", onAssist); });
-  asesoria.addEventListener("click", function () {
-    if (CONFIG.whatsapp) return;
-    var p = val("proteger");
-    if (p) checkEspacio(ESPACIO[p]);
-    checkSistema("No estoy seguro");
-  });
 
   /* --- Cotizar este sistema --- */
   $$("[data-producto]").forEach(function (a) {
@@ -173,7 +129,6 @@ const CONFIG = {
   });
 
   /* --- Formulario: validación y envío --- */
-  var bar = $(".contact-bar");
   var status = $(".form-status");
   var attempted = false;
   var checks = [
@@ -267,6 +222,224 @@ const CONFIG = {
       showStatus(true, "El envío aún no está configurado. Por favor, contáctenos por Facebook.", "Facebook", "https://www.facebook.com/SeprosegOficial/");
     }
   });
+
+  /* --- Galería de instalaciones --- */
+  var TIPOS = { hogar: "Hogar", negocio: "Negocio", industria: "Industria", vehiculo: "Vehículo" };
+  var ESPACIO = { hogar: "Hogar", negocio: "Negocio", industria: "Industria", vehiculo: "Vehículo/flota" };
+  var GRUPOS = [
+    { id: "todos", nombre: "Todos", tipos: null },
+    { id: "hogar", nombre: "Hogar", tipos: ["hogar"] },
+    { id: "negocio", nombre: "Negocio e industria", tipos: ["negocio", "industria"] },
+    { id: "vehiculo", nombre: "Vehículos", tipos: ["vehiculo"] }
+  ];
+  var PAGINA = 8;
+  var fotos = [];
+  if (Array.isArray(window.INSTALACIONES)) {
+    window.INSTALACIONES.forEach(function (f) {
+      var ok = f && typeof f.archivo === "string" && f.archivo.trim() && typeof f.titulo === "string" && f.titulo.trim() &&
+        typeof f.tipo === "string" && Object.prototype.hasOwnProperty.call(TIPOS, f.tipo);
+      if (ok) fotos.push(f); else console.warn("Foto descartada en instalaciones.js:", f);
+    });
+  }
+  var gSec = $("#trabajos");
+  var gList = $(".gallery", gSec);
+  var gEmpty = $(".gallery-empty", gSec);
+  var gFilters = $(".filters", gSec);
+  var gMore = $(".gallery-more", gSec);
+  var gLive = $("#galeria-live");
+  var gFiltro = "todos";
+  var gShown = PAGINA;
+  var svgNS = "http://www.w3.org/2000/svg";
+
+  function icono(id, size, cls) {
+    var s = doc.createElementNS(svgNS, "svg");
+    s.setAttribute("class", "icon" + (cls ? " " + cls : ""));
+    s.setAttribute("width", size);
+    s.setAttribute("height", size);
+    s.setAttribute("aria-hidden", "true");
+    s.setAttribute("focusable", "false");
+    var u = doc.createElementNS(svgNS, "use");
+    u.setAttribute("href", "#" + id);
+    s.appendChild(u);
+    return s;
+  }
+  function ruta(f) { return "assets/instalaciones/" + encodeURIComponent(f.archivo); }
+  function meta(f) { return TIPOS[f.tipo] + (f.lugar ? " · " + f.lugar : ""); }
+  function validas() { return fotos.filter(function (f) { return !f.rota; }); }
+  function grupo(id) { return GRUPOS.filter(function (g) { return g.id === id; })[0]; }
+  function actuales() {
+    var g = grupo(gFiltro);
+    return validas().filter(function (f) { return !g.tipos || g.tipos.indexOf(f.tipo) >= 0; });
+  }
+  function anunciar(t) { gLive.textContent = ""; setTimeout(function () { gLive.textContent = t; }, 50); }
+
+  function tesela(f) {
+    var li = el("li");
+    var a = el("a", "", "work");
+    a.href = ruta(f);
+    a.setAttribute("data-evento", "galeria-abrir");
+    a.setAttribute("aria-haspopup", "dialog");
+    var media = el("div", "", "work-media");
+    media.appendChild(icono("i-" + f.tipo, 32));
+    var img = doc.createElement("img");
+    img.alt = "";
+    img.width = 1200;
+    img.height = 900;
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.sizes = "(min-width: 64em) 25vw, (min-width: 37.5em) 33vw, 50vw";
+    img.addEventListener("load", function () { img.classList.add("is-loaded"); });
+    img.addEventListener("error", function () {
+      if (f.rota) return;
+      f.rota = true;
+      console.warn("Foto no encontrada: " + f.archivo);
+      render();
+    });
+    img.src = ruta(f);
+    media.appendChild(img);
+    var zoom = el("span", "", "work-zoom");
+    zoom.setAttribute("aria-hidden", "true");
+    zoom.appendChild(icono("i-ampliar", 20));
+    media.appendChild(zoom);
+    a.appendChild(media);
+    var cap = el("span", "", "work-cap");
+    cap.appendChild(el("span", "Ampliar foto: ", "sr-only"));
+    cap.appendChild(el("span", f.titulo, "work-title"));
+    cap.appendChild(el("span", meta(f), "work-meta"));
+    a.appendChild(cap);
+    f.a = a;
+    li.appendChild(a);
+    return li;
+  }
+
+  function filtros() {
+    var v = validas();
+    var grupos = GRUPOS.filter(function (g) {
+      return g.tipos && v.some(function (f) { return g.tipos.indexOf(f.tipo) >= 0; });
+    });
+    var on = v.length >= 6 && grupos.length >= 2;
+    gFilters.hidden = !on;
+    gFilters.textContent = "";
+    if (!on) { gFiltro = "todos"; return; }
+    if (gFiltro !== "todos" && grupos.indexOf(grupo(gFiltro)) < 0) gFiltro = "todos";
+    [GRUPOS[0]].concat(grupos).forEach(function (g) {
+      var b = el("button", "", "filter");
+      b.type = "button";
+      b.setAttribute("aria-pressed", g.id === gFiltro ? "true" : "false");
+      b.setAttribute("data-evento", "galeria-filtro");
+      b.appendChild(icono("i-check", 16));
+      b.appendChild(doc.createTextNode(g.nombre));
+      b.addEventListener("click", function () {
+        gFiltro = g.id;
+        gShown = PAGINA;
+        $$(".filter", gFilters).forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        render(true);
+        var n = actuales().length;
+        anunciar("Mostrando " + n + " trabajos" + (g.tipos ? ": " + g.nombre : "") + ".");
+      });
+      gFilters.appendChild(b);
+    });
+  }
+
+  function render(sinFiltros) {
+    var v = validas();
+    var hay = v.length > 0;
+    $$("[data-galeria='con-fotos']").forEach(function (n) { n.hidden = !hay; });
+    $$("[data-si-galeria]").forEach(function (n) { n.hidden = !hay; });
+    gEmpty.hidden = hay;
+    if (!sinFiltros) filtros();
+    gList.textContent = "";
+    gMore.hidden = true;
+    if (!hay) { gFilters.hidden = true; return; }
+    var lista = actuales();
+    var vis = lista.slice(0, gShown);
+    vis.forEach(function (f) { gList.appendChild(tesela(f)); });
+    gList.setAttribute("data-count", vis.length < 4 ? String(vis.length) : "n");
+    gMore.hidden = lista.length <= gShown;
+  }
+  gMore.addEventListener("click", function () {
+    var antes = gShown;
+    var lista = actuales();
+    gShown += PAGINA;
+    render(true);
+    var nuevos = Math.min(gShown, lista.length) - antes;
+    var primera = $$("a.work", gList)[antes];
+    if (primera) primera.focus();
+    anunciar("Se agregaron " + nuevos + " trabajos.");
+  });
+  render();
+
+  /* --- Visor --- */
+  var visor = $("#visor");
+  if (visor && typeof visor.showModal === "function") {
+    var vImg = $("img", visor);
+    var vCount = $(".lb-count", visor);
+    var vTit = $("#visor-titulo", visor);
+    var vMeta = $(".lb-meta", visor);
+    var vCot = $(".lb-cot-titulo", visor);
+    var vAcc = $(".lb-actions", visor);
+    var vPrev = $("[data-lb='anterior']", visor);
+    var vNext = $("[data-lb='siguiente']", visor);
+    var lista = [];
+    var idx = 0;
+    var origen = null;
+    function mostrar(i) {
+      idx = (i + lista.length) % lista.length;
+      var f = lista[idx];
+      vCount.textContent = "Foto " + (idx + 1) + " de " + lista.length;
+      vTit.textContent = f.titulo;
+      vMeta.textContent = meta(f);
+      vCot.textContent = ": " + f.titulo;
+      vImg.alt = f.alt || f.titulo;
+      vImg.src = ruta(f);
+    }
+    function abrir(f, a) {
+      lista = actuales();
+      var i = lista.indexOf(f);
+      if (i < 0) return;
+      origen = a;
+      visor.returnValue = "";
+      vPrev.hidden = vNext.hidden = lista.length < 2;
+      mostrar(i);
+      visor.showModal();
+      $("[data-lb='cerrar']", visor).focus();
+    }
+    gList.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a.work") : null;
+      if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      var f = fotos.filter(function (x) { return x.a === a; })[0];
+      if (!f) return;
+      e.preventDefault();
+      abrir(f, a);
+    });
+    vPrev.addEventListener("click", function () { mostrar(idx - 1); });
+    vNext.addEventListener("click", function () { mostrar(idx + 1); });
+    $("[data-lb='cerrar']", visor).addEventListener("click", function () { visor.close(); });
+    visor.addEventListener("click", function (e) {
+      if (e.target !== visor) return;
+      var r = visor.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) visor.close();
+    });
+    visor.addEventListener("keydown", function (e) {
+      if (lista.length < 2) return;
+      if (e.key === "ArrowLeft") { e.preventDefault(); mostrar(idx - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); mostrar(idx + 1); }
+    });
+    visor.addEventListener("close", function () {
+      var f = lista[idx];
+      var a = f && f.a && doc.contains(f.a) ? f.a : (origen && doc.contains(origen) ? origen : $("a.work", gList));
+      if (visor.returnValue !== "cotizar" && a) a.focus();
+    });
+    $("[data-lb='cotizar']", visor).addEventListener("click", function () {
+      var f = lista[idx];
+      visor.close("cotizar");
+      checkEspacio(ESPACIO[f.tipo]);
+      (Array.isArray(f.sistemas) ? f.sistemas : []).forEach(function (n) { checkSistema(n); });
+      var h = $("#cotizar");
+      location.hash = "cotizar";
+      h.focus();
+    });
+  }
 
   /* --- Header con sombra al hacer scroll --- */
   function onScroll() { header.classList.toggle("is-scrolled", window.scrollY > 8); }
