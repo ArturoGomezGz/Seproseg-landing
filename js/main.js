@@ -223,6 +223,19 @@ const CONFIG = {
     }
   });
 
+  /* --- Imágenes de producto: si falta una, se oculta su placa --- */
+  $$(".card-media img, .card-media--duo img").forEach(function (img) {
+    function fallo() {
+      console.warn("Imagen de producto no encontrada: " + img.getAttribute("src"));
+      var celda = img.closest(".media-cell") || img.closest(".card-media");
+      if (celda) celda.hidden = true;
+      var duo = img.closest(".card-media--duo");
+      if (duo && !$(".media-cell:not([hidden])", duo)) duo.hidden = true;
+    }
+    if (img.complete && img.naturalWidth === 0 && img.getAttribute("src")) fallo();
+    else img.addEventListener("error", fallo);
+  });
+
   /* --- Galería de instalaciones --- */
   var TIPOS = { hogar: "Hogar", negocio: "Negocio", industria: "Industria", vehiculo: "Vehículo" };
   var ESPACIO = { hogar: "Hogar", negocio: "Negocio", industria: "Industria", vehiculo: "Vehículo/flota" };
@@ -345,7 +358,6 @@ const CONFIG = {
     var v = validas();
     var hay = v.length > 0;
     $$("[data-galeria='con-fotos']").forEach(function (n) { n.hidden = !hay; });
-    $$("[data-si-galeria]").forEach(function (n) { n.hidden = !hay; });
     gEmpty.hidden = hay;
     if (!sinFiltros) filtros();
     gList.textContent = "";

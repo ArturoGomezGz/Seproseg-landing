@@ -1,9 +1,9 @@
 # Sistema de diseño — Seproseg
 
-> Versión 2.0 — 2026-10-16. Responsable: experto UI/UX.
+> Versión 2.1 — 2026-10-19. Responsable: experto UI/UX.
 > Fuente de marca: `docs/marca/plataforma.md` (§7 dirección visual). Si el cliente entrega logo/colores oficiales, **esos valores reemplazan la paleta de este documento** y se re-verifican los contrastes.
 > El desarrollador **no inventa valores**: todo color, tamaño, espacio, radio o sombra sale de aquí.
-> La v2.0 acompaña a la spec `002-rediseno.md`. Los cambios respecto a la v1.0 están en §9.
+> La v2.0 acompaña a la spec `002-rediseno.md`; la v2.1 a la spec `003-productos-croquis.md`. Los cambios están en §9.
 
 ---
 
@@ -29,7 +29,8 @@ Variables CSS con estos nombres exactos, declaradas en `:root` de `css/styles.cs
 | `--c-navy-900` | `#0B2545` | Color de marca. Titulares sobre claro, logotipo en texto, franja de escalabilidad, pie, fondo del visor de fotos. |
 | `--c-navy-800` | `#13315C` | Fondo de la sección Contacto y de la barra de contacto móvil. |
 | `--c-blue-700` | `#1D4E89` | Enlaces, iconos sobre claro, foco sobre claro, borde de tarjeta destacada (`:target`). |
-| `--c-blue-50` | `#EEF4FB` | **Fondo del hero**, contenedores de icono, fondo de las teselas de foto mientras cargan, tarjeta de estado vacío de la galería. |
+| `--c-blue-50` | `#EEF4FB` | **Fondo del hero**, contenedores de icono, fondo de las teselas de foto mientras cargan, tarjeta de estado vacío de la galería, **placas de producto**, suelo del croquis. |
+| `--c-blue-100` | `#DCE7F5` | **Nuevo token (v2.1)** para un valor que ya se usaba suelto: fondo activo del botón secundario. Reservado también para resaltados de ilustración. |
 | `--c-ink` | `#1E293B` | Texto de cuerpo sobre claro. |
 | `--c-muted` | `#475569` | Texto secundario (microtextos, "Ideal para", pies de foto secundarios, ayudas). |
 | `--c-surface` | `#FFFFFF` | Fondo base, tarjetas. |
@@ -83,7 +84,11 @@ Variables CSS con estos nombres exactos, declaradas en `:root` de `css/styles.cs
 | `#B42318` error | `#FFFFFF` / `#FEF3F2` | 6,6:1 / ≈ 6,1:1 | Errores |
 | `#067647` success | `#FFFFFF` / `#ECFDF3` | 5,7:1 / ≈ 5,5:1 | Confirmación |
 | `#0B2545` | `#FFFBEB` amber-50 | ≈ 15:1 | Etiquetas "Pendiente" (solo revisión) |
-| `#0B2545` (texto) | `#DCE7F5` | ≈ 12,3:1 | Botón secundario activo |
+| `#0B2545` (texto) | `#DCE7F5` blue-100 | ≈ 12,3:1 | Botón secundario activo; anillo de marcador del croquis |
+| `#1D4E89` blue-700 | `#DCE7F5` blue-100 | ≈ 6,7:1 | Iconos/trazos sobre resaltado |
+| `#FFFFFF` (número) | `#0B2545` (marcador) | 15,4:1 | Número de marcador del croquis y de la leyenda |
+| `#0B2545` (número) | `#F59E0B` (marcador hover) | 7,2:1 | Marcador del croquis en hover |
+| **Insuficiente solo** `#F59E0B` marcador | `#FFFFFF` | 2,15:1 | Por eso el marcador ámbar lleva **siempre** anillo navy-900 (15,4:1) |
 | **Prohibido** `#F59E0B` | `#FFFFFF` / `#EEF4FB` | 2,15:1 / ≈ 1,9:1 | Nunca como texto ni único indicador |
 | **Prohibido** `#FFFFFF` | `#F59E0B` | 2,15:1 | Nunca |
 | **Decorativo** `#CBD5E1` | `#FFFFFF` | 1,5:1 | Solo bordes de tarjeta / separadores |
@@ -128,6 +133,9 @@ Reglas: párrafos `max-width: 65ch`, intros `60ch`; sin MAYÚSCULAS sostenidas; 
 | `--header-h` | `56px` móvil/tablet · `72px` escritorio |
 | `--bar-h` | `64px` (+ `env(safe-area-inset-bottom)`) |
 | `--ratio-foto` | `4 / 3` — proporción **única** de las teselas de la galería |
+| `--ratio-producto` | `4 / 3` — placa de producto sencilla (v2.1) |
+| `--ratio-producto-duo` | `2 / 3` — cada mitad de la placa doble (v2.1) |
+| `--cq-badge-scale` | `1.6` móvil · `1.1` tablet · `1.4` escritorio — escala de los marcadores del croquis (v2.1) |
 
 Solo estos dos breakpoints, siempre `min-width`.
 
@@ -165,7 +173,9 @@ Solo estos dos breakpoints, siempre `min-width`.
   --c-on-dark:#FFFFFF; --c-on-dark-muted:#CBD5E1;
   --c-error:#B42318; --c-error-bg:#FEF3F2; --c-success:#067647; --c-success-bg:#ECFDF3;
   --c-backdrop: rgba(11, 37, 69, 0.92);
-  --ratio-foto: 4 / 3;
+  --c-blue-100:#DCE7F5;
+  --ratio-foto: 4 / 3; --ratio-producto: 4 / 3; --ratio-producto-duo: 2 / 3;
+  --cq-badge-scale: 1.6;               /* 1.1 en ≥600, 1.4 en ≥1024 */
   --focus: var(--c-blue-700);          /* se redefine a --c-amber-400 en .is-dark */
 }
 .is-dark { --focus: var(--c-amber-400); color: var(--c-on-dark); }
@@ -197,6 +207,15 @@ Solo estos dos breakpoints, siempre `min-width`.
 
 **Se elimina** `i-menu` (no hay menú hamburguesa). Prohibido: sirenas, candados flotantes, calaveras, rayos, siluetas de ladrones, señales de peligro.
 
+### 3.1 Ilustraciones (v2.1)
+
+Aplica al croquis del hogar (SVG inline) y a las ilustraciones de producto (`assets/productos/*.svg`).
+- **Plano y lineal**, coherente con los iconos: sin degradados, sin sombras, sin perspectiva realista, **sin texto** (salvo números de marcador).
+- Trazos: estructura navy-900; equipos de seguridad blue-700; en SVG inline, `vector-effect: non-scaling-stroke` (grosor constante: 2 px estructura/equipos, 1.5 px detalles). En SVG como archivo: trazo 3 u sobre viewBox de 480 de ancho.
+- Rellenos: blanco (muros, objetos), navy-800 (techo/volúmenes oscuros), navy-900 (losas, ruedas, postes), `--c-border` (mobiliario, vegetación, bardas), blue-50 (suelo).
+- **Un único acento amber-500** por equipo (LED r 2 / pin de mapa). Nunca rojo.
+- Mismas prohibiciones que la iconografía; además, nada de personas en situación de amenaza ni escenas nocturnas dramáticas.
+
 ---
 
 ## 4. Componentes
@@ -222,8 +241,8 @@ Base: `display:inline-flex; align-items:center; justify-content:center; gap: var
 ### 4.2 Encabezado (`.site-header`) — rediseñado
 
 - `position: sticky; top:0;` fondo blanco, borde inferior 1px `--c-border`; `.is-scrolled` añade `--sh-sm`.
-- **Móvil/tablet (< 1024)**: logo (izq.) · botón `Cotizar` (`.btn--primary.btn--compact`, der.). **No hay menú ni hamburguesa.**
-- **Escritorio (≥ 1024)**: logo · `nav[aria-label="Principal"]` con 2–3 enlaces (ink 600; hover blue-700 + subrayado; área ≥ 44 px de alto) · enlace `WhatsApp` (icono + texto, solo si hay número) · `Cotizar`.
+- **Móvil/tablet (< 1024)**: logo (izq.) · enlace `Fotos` (v2.1: único ítem visible del nav; texto ink 600, subrayado 1px offset 3px, `min-height:44px`, `padding-inline: var(--sp-2)`; su complemento " de los trabajos" es `.sr-only`) · botón `Cotizar` (`.btn--primary.btn--compact`, der.). **No hay menú ni hamburguesa.**
+- **Escritorio (≥ 1024)**: logo · `nav[aria-label="Principal"]` con 3 enlaces `Sistemas · Fotos de los trabajos · Cómo trabajamos` (ink 600; hover blue-700 + subrayado; área ≥ 44 px de alto) · enlace `WhatsApp` (icono + texto, solo si hay número) · `Cotizar`. El enlace de fotos es **siempre visible** (v2.1), haya o no fotos.
 - Logo provisional: "Seproseg", `--fs-logo`, 800, navy-900, enlace a `#inicio`.
 
 ### 4.3 Barra de contacto móvil (`.contact-bar`) — regla cambiada
@@ -243,7 +262,7 @@ Base `.card`: fondo blanco, borde 1px `--c-border`, `--r-lg`, padding `--sp-5` /
 
 | Variante | Contenido en orden | Notas |
 |---|---|---|
-| `.card--product` | Fila cabecera: icono (40/48) + H3 en línea (`display:flex; align-items:center; gap: var(--sp-3)`) · beneficio (600 navy-900) · descripción · "Ideal para:" (`--fs-small`) · botón `.btn--secondary` al pie (`margin-top:auto`) | Hover: `--sh-md` + `translateY(-2px)`. No clicable completa. **Estado `:target`** (se llega desde una tarjeta de necesidad): borde 2px blue-700 y `--sh-sm`; sin animación. |
+| `.card--product` | **Placa de producto** (§4.14, v2.1; `margin-bottom` hasta la cabecera `--sp-4`) · Fila cabecera: icono (40/48) + H3 en línea (`display:flex; align-items:center; gap: var(--sp-3)`) · beneficio (600 navy-900) · descripción · "Ideal para:" (`--fs-small`) · botón `.btn--secondary` al pie (`margin-top:auto`) | Hover: `--sh-md` + `translateY(-2px)`. No clicable completa. **Estado `:target`** (se llega desde una tarjeta de necesidad): borde 2px blue-700 y `--sh-sm`; sin animación. |
 | `.need` (tarjeta de necesidad, **nueva**) | `<a>` completo: icono 24 px blue-700 · título (`--fs-h3` 600 navy-900) · línea "Le recomendamos: …" (`--fs-small`, muted, con el sistema en 600 ink) · flecha `i-flecha` 20 px a la derecha | Es un único enlace, por eso la tarjeta entera es clicable. Fondo blanco, borde 1px `--c-border`, `--r-lg`, padding `--sp-4`/`--sp-5`, `min-height: 72px`, grid `24px 1fr 20px`, gap `--sp-3`. Hover: borde blue-700 + `--sh-md`. Foco: anillo en la tarjeta entera. |
 | `.pillars` (pilares, **nueva**) | Una sola tarjeta blanca (`--r-lg`, `--sh-sm`, sin borde) con 4 ítems: icono 24 px blue-700 · título (`--fs-body` 700 navy-900) · línea (`--fs-small` muted) | Ítems separados por borde 1px `--c-border` (horizontal en móvil, vertical en escritorio). No interactivo. |
 | `.space` (ítem de espacio dentro de la franja oscura) | icono 24 px amber-500 en contenedor oscuro 40×40 · H3 (`--fs-body` 700 blanco) · texto (`--fs-small` on-dark-muted) | No interactivo. |
@@ -304,6 +323,46 @@ Igual que v1.0, usando ahora los tokens `--c-amber-600` (borde 2px discontinuo) 
 
 `.menu-toggle` y panel de menú móvil · `.route` / `.route--a` / `.route--b` · `.choice` (píldoras radio) · `.reco` / `.badge` · `.card--space` con chips · `.card--trust` · `.slot`. Su CSS y JS se eliminan (no dejar código muerto).
 
+**Retirado en v2.1**: `.hero-panel` (panel "Nuestros sistemas" del hero), sustituido por el croquis `.house-map` (§4.15).
+
+### 4.14 Placa de producto (`.card-media`, `.card-media--duo`) — v2.1
+
+```
+div.card-media                    aspect-ratio: var(--ratio-producto); fondo blue-50; --r-md; overflow:hidden; isolation:isolate
+  img                             width/height 100%; object-fit: contain; mix-blend-mode: multiply; lazy; async
+
+div.card-media--duo               grid 2 × 1fr, gap --sp-2
+  figure.media-cell (×2)
+    div.media-plate               aspect-ratio: var(--ratio-producto-duo); mismo estilo que .card-media
+      img
+    figcaption                    --fs-small 600 ink, mt --sp-2
+```
+- Las fotos se preparan sobre lienzo blanco de la misma proporción que la placa (reglas en §8.1); `multiply` funde el blanco con el blue-50.
+- No interactiva (sin hover propio; el hover es el de la tarjeta). Sin texto encima.
+- Error de carga: la placa se oculta (`hidden`) y la tarjeta queda como sin imagen. En la duo, si falta una, la otra ocupa el ancho con proporción `--ratio-producto`.
+
+### 4.15 Croquis del hogar (`.house-map`) — v2.1
+
+Tarjeta "flotante" dentro del hero: fondo blanco, `--r-lg`, **`--sh-lg`**, sin borde; padding `--sp-4` M / `--sp-5` ≥600.
+```
+div.house-map
+  div.house-map-head      logo (img, alto 24/28/32 px) + título p (--fs-small 600 muted); M apilado, ≥600 en fila con space-between
+  svg.cq                  ilustración inline (§3.1), role="img" con title/desc; width 100%
+  ol.cq-legend            leyenda de enlaces (§4.16); 1 col M, 2 col (grid-auto-flow: column, 3 filas) ≥600
+  p.cq-note               --fs-small muted
+```
+- **Marcadores** (`a.cq-hot` dentro del SVG, `tabindex="-1"`): círculo r 20 navy-900 + número blanco 700 (20 u) + anillo r 26 navy-900 3px (oculto en reposo) + área táctil transparente r 32; escalados con `--cq-badge-scale` (`transform-box: fill-box; transform-origin: center`).
+- Estados del marcador: reposo navy/blanco · hover: fondo amber-500, número navy-900, **anillo visible** (obligatorio) · `forced-colors`: `Canvas`/`CanvasText`, hover `Highlight`/`HighlightText`.
+- Resaltado cruzado leyenda ↔ marcador con `:has` (opcional, mejora progresiva). Sin JS.
+- Logo: `<img>` de `assets/marca/logo-seproseg.svg` (provisional: tesela del favicon + wordmark). Se sustituye sobrescribiendo el archivo. Margen libre ≥ 8 px; nunca sobre el dibujo ni sobre fotos.
+
+### 4.16 Enlace de leyenda (`a.cq-link`) — v2.1
+
+- Fila `min-height:44px`, grid `28px 1fr`, gap `--sp-2`, `padding-block: var(--sp-1)`; separador 1px `--c-border` entre filas de una misma columna.
+- `span.cq-num` (`aria-hidden`): círculo 28 px navy-900, número blanco 700 `--fs-small`.
+- `span.cq-name`: `--fs-small` 600 ink; `span.cq-where`: `--fs-small` 400 muted, en línea propia.
+- Sin subrayado en reposo. Hover: nombre blue-700 subrayado. Foco: anillo estándar sobre la fila.
+
 ---
 
 ## 5. Accesibilidad (WCAG 2.2 AA)
@@ -345,7 +404,8 @@ Solo combinaciones de §2.2. Nada de texto sobre fotos.
 ## 7. Rendimiento
 
 - 0 fuentes web, 0 librerías, 0 peticiones a terceros al cargar.
-- Peso sin fotos (HTML + CSS + JS + datos de galería + favicon, sin comprimir): **≤ 120 KB**; gzip **≤ 35 KB**.
+- Peso sin imágenes (HTML con SVG inline + CSS + JS + datos de galería + favicon, sin comprimir): **≤ 140 KB**; gzip **≤ 40 KB** (v2.1: +croquis inline ≤ 12 KB).
+- **Imágenes de producto**: WebP 4:3 `480×360` (≤ 22 KB) y `720×540` (≤ 40 KB); mitades 2:3 `240×360` (≤ 14 KB) y `360×540` (≤ 26 KB); `srcset` + `sizes` + `width`/`height`; todas `lazy`. Ilustraciones SVG ≤ 4 KB. Logo provisional ≤ 2 KB.
 - **Fotos de instalaciones**: WebP (preferido) o JPG, **1200×900 px** (4:3) o lado mayor 1200 px, **≤ 200 KB** cada una, sin metadatos (EXIF/GPS eliminados). `loading="lazy"` + `decoding="async"` en todas (ninguna está en el primer pantallazo). Se cargan como máximo 8 en el primer bloque de la galería.
 
 ---
@@ -357,10 +417,31 @@ Solo combinaciones de §2.2. Nada de texto sobre fotos.
 3. **Privacidad y seguridad del cliente final** (crítico para una empresa de seguridad): no mostrar rostros reconocibles, placas de vehículos, números de casa, nombres de comercio no autorizados, pantallas con imágenes de cámaras, ni planos/ubicación exacta de equipos que expongan vulnerabilidades. El campo "lugar" admite como máximo ciudad o distrito.
 4. Eliminar metadatos de ubicación (EXIF GPS) al exportar (p. ej. exportando con Squoosh.app o "Guardar para web"; herramienta del editor, no dependencia del sitio).
 
+### 8.1 Imágenes de producto (catálogo) — v2.1
+
+1. Carpeta `assets/productos/`, nombres `{sistema}-{equipo}-{ancho}.webp` en minúsculas sin tildes.
+2. Recortar al ras del contenido (producto + logotipo de marca si lo trae), eliminando el blanco sobrante; colocar sobre lienzo **blanco puro** con la proporción de la placa (4:3 o 2:3), contenido centrado al **88 %** de la dimensión limitante. Así todos se ven parejos.
+3. Los logotipos de marca del fabricante **se conservan** (aprobado por el cliente para Dahua, DSC, SEG, Wejoin y ZKTeco). Se eliminan banners promocionales o sellos sobrepuestos (p. ej. "ADMS Ready").
+4. Son **imágenes referenciales** de terceros: el cliente confirma que instala esos productos y tiene derecho a usarlas; se acompañan de la nota "Imágenes referenciales…". Preferencia futura: fotos propias con el mismo tratamiento.
+5. Nunca imágenes generadas con texto ilegible ni interfaces falsas; en su lugar, ilustración propia (§3.1).
+6. `alt` describe el equipo en lenguaje simple, sin repetir la marca.
+
+---
+
+### 8.2 Logo oficial (nota, 2026-10-19)
+
+El cliente entregó el logo oficial (símbolo "arco con ojo de cerradura" + SEPROSEG + "SEGURIDAD INTEGRAL"). Está en `assets/marca/` (`seproseg-horizontal-claro.svg` en cabecera y croquis, `seproseg-horizontal-mono-blanco.svg` en el pie, `seproseg-simbolo-claro.svg` en cabecera < 360 px) y `favicon.svg` es su icono de app. Paleta del logo: grafito `#2A2F38`, papel `#F0F2F4`, azul hielo `#8FB1CE` / `#6A93B5`. **Pendiente de decidir** si la paleta del sitio (navy / ámbar) se alinea con la del logo; por ahora no cambia. Notas: la bajada "SEGURIDAD INTEGRAL" es ilegible por debajo de ~56 px de alto; `horizontal-oscuro` trae fondo grafito opaco y no se usa sobre el navy del pie. Sustituye el logo provisional de §4.2/§4.15 (el wordmark en texto del header y el pie).
+
 ---
 
 ## 9. Registro de cambios
 
+- **2.1 (2026-10-19)** — spec 003:
+  - Tokens: `--c-blue-100` (tokeniza el `#DCE7F5` del botón secundario activo), `--ratio-producto` 4/3, `--ratio-producto-duo` 2/3, `--cq-badge-scale`.
+  - Nueva §3.1 Ilustraciones; nueva §8.1 Imágenes de producto.
+  - Header: enlace `Fotos` / `Fotos de los trabajos` siempre visible (también en móvil).
+  - Nuevos componentes: placa de producto (§4.14), croquis `.house-map` con marcadores (§4.15), enlace de leyenda (§4.16). Retirado `.hero-panel`.
+  - Contrastes añadidos para marcadores y blue-100. Presupuesto de peso ampliado a 140 KB / 40 KB gzip.
 - **2.0 (2026-10-16)** — rediseño (spec 002):
   - Hero pasa de navy a **fondo claro blue-50** con H1 navy-900; el navy queda para franja de escalabilidad, contacto, pie y visor.
   - Header sin menú hamburguesa: móvil = logo + Cotizar; escritorio = 2–3 enlaces + WhatsApp + Cotizar.

@@ -53,13 +53,12 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <!-- [[PENDIENTE: logo oficial]] reemplazar por <img> SVG con alt="Seproseg" -->
-    <a class="logo" href="#inicio">Seproseg</a>
+    <a class="logo" href="#inicio"><picture><source media="(max-width: 22.49em)" srcset="assets/marca/seproseg-simbolo-claro.svg"><img src="assets/marca/seproseg-horizontal-claro.svg" alt="Seproseg" width="308" height="92"></picture></a>
     <nav class="nav" aria-label="Principal">
       <ul>
-        <li><a href="#sistemas">Sistemas</a></li>
-        <li data-si-galeria hidden><a href="#trabajos">Trabajos</a></li>
-        <li><a href="#proceso">Cómo trabajamos</a></li>
+        <li class="nav-wide"><a href="#sistemas">Sistemas</a></li>
+        <li><a href="#trabajos" data-evento="nav-fotos">Fotos<span class="nav-extra"> de los trabajos</span></a></li>
+        <li class="nav-wide"><a href="#proceso">Cómo trabajamos</a></li>
       </ul>
     </nav>
     <div class="header-actions">
@@ -82,16 +81,81 @@
         </div>
         <p class="small muted hero-micro">Asesoría sin compromiso.</p>
       </div>
-      <div class="hero-panel">
-        <p class="hero-panel-title">Nuestros sistemas</p>
-        <ul>
-        <li><a href="#cctv"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-cctv"/></svg></span><span class="pn">Cámaras CCTV</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a href="#alarma"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-alarma"/></svg></span><span class="pn">Alarma contra intrusión</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a href="#cercos"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-cerco"/></svg></span><span class="pn">Cercos electrificados</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a href="#accesos-vehiculares"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-cochera"/></svg></span><span class="pn">Automatización de cocheras y accesos</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a href="#control-acceso"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-acceso"/></svg></span><span class="pn">Control de acceso</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        <li><a href="#gps"><span class="icon-box icon-box--sm"><svg class="icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="#i-gps"/></svg></span><span class="pn">GPS vehicular</span><svg class="icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a></li>
-        </ul>
+      <div class="house-map">
+        <div class="house-map-head">
+          <img class="brand-logo" src="assets/marca/seproseg-horizontal-claro.svg" alt="Seproseg" width="308" height="92">
+          <p id="cq-titulo" class="house-map-title">Lo que puede agregar a su hogar</p>
+        </div>
+        <svg class="cq" viewBox="0 0 800 500" width="800" height="500" role="img" aria-labelledby="cq-tit cq-desc" focusable="false" xmlns="http://www.w3.org/2000/svg">
+          <title id="cq-tit">Ilustración de una casa en corte con 6 sistemas de seguridad numerados</title>
+          <desc id="cq-desc">1 Automatización de cocheras y accesos, en el portón de la cochera. 2 GPS vehicular, en el auto. 3 Control de acceso, en la puerta principal. 4 Alarma contra intrusión, en puertas, ventanas e interiores. 5 Cámaras CCTV, en la fachada, el patio y el interior. 6 Cercos electrificados, sobre las bardas.</desc>
+          <rect class="gr" x="0" y="460" width="800" height="30"/>
+          <path class="n" d="M0 460H800"/>
+          <polygon class="r" points="288,150 460,62 632,150"/>
+          <rect class="w" x="300" y="150" width="320" height="310"/>
+          <rect class="l" x="300" y="296" width="320" height="8"/>
+          <path class="n" d="M460 150V296M380 304V460"/>
+          <rect class="w" x="136" y="300" width="164" height="160"/>
+          <rect class="l" x="130" y="292" width="176" height="8"/>
+          <rect class="l" x="14" y="310" width="12" height="150"/>
+          <rect class="l" x="124" y="310" width="12" height="150"/>
+          <rect class="m0" x="26" y="330" width="49" height="130"/>
+          <rect class="m0" x="75" y="330" width="49" height="130"/>
+          <path class="m" d="M38 330V460M50 330V460M62 330V460M87 330V460M99 330V460M111 330V460"/>
+          <path class="p" d="M28 350H66M84 350H122"/>
+          <rect class="e" x="128" y="322" width="10" height="14"/>
+          <circle class="d" cx="133" cy="329" r="2"/>
+          <path class="w" d="M152 448V422Q152 414 162 412L178 405L196 380Q198 378 202 378H248Q254 378 258 384L270 404Q290 408 290 424V448Z"/>
+          <path class="m0" d="M190 404L204 384H226V404Z"/>
+          <circle class="l" cx="180" cy="450" r="14"/>
+          <circle class="l" cx="262" cy="450" r="14"/>
+          <rect class="ef" x="236" y="386" width="10" height="8"/>
+          <circle class="d" cx="252" cy="390" r="2"/>
+          <rect class="m0" x="318" y="370" width="40" height="90"/>
+          <circle class="l" cx="350" cy="415" r="2"/>
+          <rect class="e" x="364" y="392" width="10" height="18"/>
+          <circle class="d" cx="369" cy="397" r="2"/>
+          <rect class="m" x="392" y="410" width="98" height="20"/>
+          <rect class="m" x="392" y="430" width="98" height="26"/>
+          <rect class="m" x="530" y="418" width="84" height="42"/>
+          <rect class="m" x="530" y="330" width="84" height="24"/>
+          <rect class="e" x="388" y="350" width="14" height="20"/>
+          <circle class="d" cx="395" cy="356" r="2"/>
+          <polygon class="e" points="606,320 606,312 611,308 616,312 616,320"/>
+          <rect class="ef" x="312" y="374" width="4" height="10"/>
+          <rect class="ef" x="572" y="200" width="5" height="12"/>
+          <rect class="m" x="320" y="258" width="120" height="30"/>
+          <rect class="m" x="320" y="240" width="8" height="48"/>
+          <rect class="m0" x="500" y="190" width="70" height="60"/>
+          <path class="m" d="M535 190V250M500 220H570"/>
+          <rect class="m" x="520" y="266" width="80" height="22"/>
+          <path class="ef" d="M494 304A6 6 0 0 0 506 304Z"/>
+          <rect class="m" x="700" y="330" width="90" height="130"/>
+          <path class="e" d="M704 300V330M746 300V330M786 300V330"/>
+          <path class="h" d="M704 306H786M704 314H786M704 322H786"/>
+          <rect class="e" x="712" y="350" width="16" height="20"/>
+          <circle class="d" cx="720" cy="356" r="2"/>
+          <rect class="m" x="657" y="405" width="6" height="55"/>
+          <circle class="m" cx="660" cy="380" r="28"/>
+          <path class="e" d="M636 152V166"/>
+          <rect class="ef" x="632" y="166" width="16" height="8"/>
+          <circle class="d" cx="644" cy="170" r="2"/>
+          <a class="cq-hot" href="#accesos-vehiculares" tabindex="-1" data-sis="cochera" data-evento="croquis-marcador" transform="translate(75 300)"><g class="cq-badge"><circle class="cq-hit" r="32"/><circle class="cq-ring" r="26"/><circle class="cq-dot" r="20"/><text>1</text></g></a>
+          <a class="cq-hot" href="#gps" tabindex="-1" data-sis="gps" data-evento="croquis-marcador" transform="translate(218 360)"><g class="cq-badge"><circle class="cq-hit" r="32"/><circle class="cq-ring" r="26"/><circle class="cq-dot" r="20"/><text>2</text></g></a>
+          <a class="cq-hot" href="#control-acceso" tabindex="-1" data-sis="acceso" data-evento="croquis-marcador" transform="translate(338 338)"><g class="cq-badge"><circle class="cq-hit" r="32"/><circle class="cq-ring" r="26"/><circle class="cq-dot" r="20"/><text>3</text></g></a>
+          <a class="cq-hot" href="#alarma" tabindex="-1" data-sis="alarma" data-evento="croquis-marcador" transform="translate(440 350)"><g class="cq-badge"><circle class="cq-hit" r="32"/><circle class="cq-ring" r="26"/><circle class="cq-dot" r="20"/><text>4</text></g></a>
+          <a class="cq-hot" href="#cctv" tabindex="-1" data-sis="cctv" data-evento="croquis-marcador" transform="translate(680 175)"><g class="cq-badge"><circle class="cq-hit" r="32"/><circle class="cq-ring" r="26"/><circle class="cq-dot" r="20"/><text>5</text></g></a>
+          <a class="cq-hot" href="#cercos" tabindex="-1" data-sis="cercos" data-evento="croquis-marcador" transform="translate(745 270)"><g class="cq-badge"><circle class="cq-hit" r="32"/><circle class="cq-ring" r="26"/><circle class="cq-dot" r="20"/><text>6</text></g></a>
+        </svg>
+        <ol class="cq-legend" aria-labelledby="cq-titulo">
+          <li><a class="cq-link" href="#accesos-vehiculares" data-sis="cochera" data-evento="croquis-sistema"><span class="cq-num" aria-hidden="true">1</span><span class="cq-name">Automatización de cocheras y accesos</span><span class="cq-where">Portón de la cochera</span></a></li>
+          <li><a class="cq-link" href="#gps" data-sis="gps" data-evento="croquis-sistema"><span class="cq-num" aria-hidden="true">2</span><span class="cq-name">GPS vehicular</span><span class="cq-where">Su vehículo</span></a></li>
+          <li><a class="cq-link" href="#control-acceso" data-sis="acceso" data-evento="croquis-sistema"><span class="cq-num" aria-hidden="true">3</span><span class="cq-name">Control de acceso</span><span class="cq-where">Puerta principal</span></a></li>
+          <li><a class="cq-link" href="#alarma" data-sis="alarma" data-evento="croquis-sistema"><span class="cq-num" aria-hidden="true">4</span><span class="cq-name">Alarma contra intrusión</span><span class="cq-where">Puertas, ventanas e interiores</span></a></li>
+          <li><a class="cq-link" href="#cctv" data-sis="cctv" data-evento="croquis-sistema"><span class="cq-num" aria-hidden="true">5</span><span class="cq-name">Cámaras CCTV</span><span class="cq-where">Fachada, patio e interiores</span></a></li>
+          <li><a class="cq-link" href="#cercos" data-sis="cercos" data-evento="croquis-sistema"><span class="cq-num" aria-hidden="true">6</span><span class="cq-name">Cercos electrificados</span><span class="cq-where">Bardas</span></a></li>
+        </ol>
+        <p class="small muted cq-note">Ilustración de referencia. Cada sistema se diseña según su casa.</p>
       </div>
     </div>
   </section>
@@ -142,6 +206,9 @@
       </div>
       <div class="grid grid--products">
         <article class="card card--product" id="cctv">
+          <div class="card-media">
+            <img src="assets/productos/cctv-domo-480.webp" srcset="assets/productos/cctv-domo-480.webp 480w, assets/productos/cctv-domo-720.webp 720w" sizes="(min-width: 64em) 288px, (min-width: 37.5em) calc(50vw - 100px), calc(100vw - 80px)" width="480" height="360" alt="Cámara de seguridad tipo domo, de color blanco." loading="lazy" decoding="async">
+          </div>
           <div class="card-head">
             <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-cctv"/></svg></span>
             <h3>Cámaras CCTV</h3>
@@ -153,6 +220,9 @@
         </article>
         <article class="card card--product" id="alarma">
           <!-- [[PENDIENTE: ¿notifica al celular/central?]] Si se confirma, descripción: "Sensores en puertas, ventanas y ambientes que activan la alarma y le notifican. Se configuran por zonas según su espacio." -->
+          <div class="card-media">
+            <img src="assets/productos/alarma-kit-480.webp" srcset="assets/productos/alarma-kit-480.webp 480w, assets/productos/alarma-kit-720.webp 720w" sizes="(min-width: 64em) 288px, (min-width: 37.5em) calc(50vw - 100px), calc(100vw - 80px)" width="480" height="360" alt="Kit de alarma contra intrusión: teclado con pantalla, panel de control, sensores para puertas y ventanas, sensor de movimiento y módulo de comunicación." loading="lazy" decoding="async">
+          </div>
           <div class="card-head">
             <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-alarma"/></svg></span>
             <h3>Alarma contra intrusión</h3>
@@ -163,6 +233,9 @@
           <a class="btn btn--secondary" href="#cotizar" data-producto="Alarma contra intrusión">Cotizar este sistema<span class="sr-only">: Alarma contra intrusión</span></a>
         </article>
         <article class="card card--product" id="cercos">
+          <div class="card-media">
+            <img src="assets/productos/cerco-energizador-480.webp" srcset="assets/productos/cerco-energizador-480.webp 480w, assets/productos/cerco-energizador-720.webp 720w" sizes="(min-width: 64em) 288px, (min-width: 37.5em) calc(50vw - 100px), calc(100vw - 80px)" width="480" height="360" alt="Energizador para cerco electrificado con sirena, control remoto y batería de respaldo." loading="lazy" decoding="async">
+          </div>
           <div class="card-head">
             <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-cerco"/></svg></span>
             <h3>Cercos electrificados</h3>
@@ -173,18 +246,30 @@
           <a class="btn btn--secondary" href="#cotizar" data-producto="Cercos electrificados">Cotizar este sistema<span class="sr-only">: Cercos electrificados</span></a>
         </article>
         <article class="card card--product" id="accesos-vehiculares">
-          <!-- [[PENDIENTE: confirmar tipos de portón que atienden]] -->
+          <div class="card-media">
+            <img src="assets/productos/cochera-kit-pistones-480.webp" srcset="assets/productos/cochera-kit-pistones-480.webp 480w, assets/productos/cochera-kit-pistones-720.webp 720w" sizes="(min-width: 64em) 288px, (min-width: 37.5em) calc(50vw - 100px), calc(100vw - 80px)" width="480" height="360" alt="Kit para automatizar un portón abatible: dos brazos motorizados, tarjeta de control, dos controles remotos, herrajes y baterías." loading="lazy" decoding="async">
+          </div>
           <div class="card-head">
             <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-cochera"/></svg></span>
             <h3>Automatización de cocheras y accesos vehiculares</h3>
           </div>
           <p class="benefit">Abra y cierre sin bajar de su vehículo.</p>
-          <p>Motores para portones corredizos y levadizos, con control remoto y opciones de acceso para residentes, personal o visitantes.</p>
+          <p>Motores para portones corredizos, abatibles, plegables y levadizos, con control remoto y opciones de acceso para residentes, personal o visitantes.</p>
           <p class="ideal"><strong>Ideal para:</strong> cocheras, condominios, estacionamientos y patios de maniobra.</p>
           <a class="btn btn--secondary" href="#cotizar" data-producto="Automatización de cocheras y accesos">Cotizar este sistema<span class="sr-only">: Automatización de cocheras y accesos</span></a>
         </article>
         <article class="card card--product" id="control-acceso">
           <!-- [[PENDIENTE: ¿registra entradas y salidas?]] Si se confirma, descripción: "Acceso con tarjeta o llavero (tag), huella digital o código numérico, con registro de entradas y salidas." -->
+          <div class="card-media--duo">
+            <figure class="media-cell">
+              <div class="media-plate"><img src="assets/productos/acceso-barrera-240.webp" srcset="assets/productos/acceso-barrera-240.webp 240w, assets/productos/acceso-barrera-360.webp 360w" sizes="(min-width: 64em) 140px, (min-width: 37.5em) calc(25vw - 54px), calc(50vw - 44px)" width="240" height="360" alt="Barrera vehicular con brazo horizontal para controlar la entrada de autos." loading="lazy" decoding="async"></div>
+              <figcaption>Barrera vehicular</figcaption>
+            </figure>
+            <figure class="media-cell">
+              <div class="media-plate"><img src="assets/productos/acceso-checador-240.webp" srcset="assets/productos/acceso-checador-240.webp 240w, assets/productos/acceso-checador-360.webp 360w" sizes="(min-width: 64em) 140px, (min-width: 37.5em) calc(25vw - 54px), calc(50vw - 44px)" width="240" height="360" alt="Checador con lector de huella digital, teclado numérico y pantalla." loading="lazy" decoding="async"></div>
+              <figcaption>Checador de huella y código</figcaption>
+            </figure>
+          </div>
           <div class="card-head">
             <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-acceso"/></svg></span>
             <h3>Control de acceso con tag, huella o código</h3>
@@ -195,17 +280,21 @@
           <a class="btn btn--secondary" href="#cotizar" data-producto="Control de acceso">Cotizar este sistema<span class="sr-only">: Control de acceso</span></a>
         </article>
         <article class="card card--product" id="gps">
-          <!-- [[PENDIENTE: funciones extra (historial de rutas, alertas, apagado remoto) y suscripción]] -->
+          <!-- [[PENDIENTE: funciones extra (historial de rutas, alertas, apagado remoto) y monto de la anualidad]] La plataforma de rastreo es de un tercero (Tracksolid) y lleva anualidad; la marca no se nombra en el texto visible por ahora. Sin precios. -->
+          <div class="card-media">
+            <img src="assets/productos/gps.svg" width="480" height="360" alt="Ilustración de un auto y un celular que muestra su ubicación en un mapa." loading="lazy" decoding="async">
+          </div>
           <div class="card-head">
             <span class="icon-box"><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-gps"/></svg></span>
             <h3>GPS vehicular</h3>
           </div>
           <p class="benefit">Ubique su vehículo en tiempo real.</p>
-          <p>Rastreo desde su celular para autos particulares y flotas de trabajo.</p>
+          <p>Rastreo desde su celular para autos particulares y flotas de trabajo. El servicio se opera desde una app o plataforma de rastreo y lleva una anualidad por el servicio de plataforma.</p>
           <p class="ideal"><strong>Ideal para:</strong> vehículos particulares, flotas de reparto y transporte.</p>
           <a class="btn btn--secondary" href="#cotizar" data-producto="GPS vehicular">Cotizar este sistema<span class="sr-only">: GPS vehicular</span></a>
         </article>
       </div>
+      <p class="small muted products-note">Imágenes referenciales. Los equipos se eligen según su proyecto.</p>
       <div class="scale-band is-dark">
         <p><strong>Del hogar a la industria, el mismo respaldo.</strong> Lo que protege una vivienda se amplía a un almacén o una planta, y los sistemas se integran entre sí: cámaras, alarmas, accesos y GPS trabajando juntos.</p>
         <ul class="spaces">
@@ -220,7 +309,7 @@
   <section id="trabajos" class="section" aria-labelledby="h-trabajos">
     <div class="container">
       <div class="section-head">
-        <h2 id="h-trabajos">Nuestros trabajos</h2>
+        <h2 id="h-trabajos">Fotos de nuestros trabajos</h2>
         <p class="lead" data-galeria="con-fotos" hidden>Instalaciones reales realizadas por nuestro equipo.</p>
       </div>
       <div class="gallery-empty" data-galeria="vacia">
@@ -228,7 +317,7 @@
           <span><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-cctv"/></svg></span><span><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-cerco"/></svg></span><span><svg class="icon" width="28" height="28" aria-hidden="true" focusable="false"><use href="#i-acceso"/></svg></span>
         </div>
         <div class="gallery-empty-text">
-          <p>Conozca instalaciones realizadas por nuestro equipo en nuestra página de Facebook.</p>
+          <p>Estamos reuniendo aquí las fotos de nuestras instalaciones. Mientras tanto, puede verlas en nuestra página de Facebook.</p>
           <a class="btn btn--secondary" href="https://www.facebook.com/SeprosegOficial/" target="_blank" rel="noopener noreferrer" data-evento="facebook">Vea nuestros trabajos en Facebook<svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-externo"/></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
         </div>
       </div>
@@ -392,13 +481,13 @@
   <div class="container">
     <div class="footer-row">
       <div class="footer-brand">
-        <p class="logo-foot">Seproseg</p>
+        <img class="logo-foot" src="assets/marca/seproseg-horizontal-mono-blanco.svg" alt="Seproseg" width="308" height="92">
         <p class="small on-dark-muted">Seguridad integral para su hogar, negocio y vehículos.</p>
       </div>
       <nav aria-label="Pie de página">
         <ul>
           <li><a href="#sistemas">Sistemas</a></li>
-          <li data-si-galeria hidden><a href="#trabajos">Trabajos</a></li>
+          <li><a href="#trabajos">Fotos de los trabajos</a></li>
           <li><a href="#proceso">Cómo trabajamos</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
