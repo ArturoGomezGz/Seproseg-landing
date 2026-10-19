@@ -44,9 +44,11 @@
 </svg>
 
 <header class="site-header">
-  <!-- [[PENDIENTE: logo oficial]] reemplazar por <img> SVG con alt="Seproseg" -->
-  <a class="logo" href="#inicio">Seproseg</a>
-  <a class="btn" href="#contacto" data-evento="header-cotizar">Solicitar cotización</a>
+  <a class="logo" href="#inicio"><picture><source media="(max-width: 22.49em)" srcset="assets/marca/seproseg-simbolo-claro.svg"><img src="assets/marca/seproseg-horizontal-claro.svg" alt="Seproseg" width="308" height="92"></picture></a>
+  <nav class="head-nav" aria-label="Principal">
+    <a class="head-link" href="#trabajos" data-evento="nav-fotos">Fotos<span class="nav-extra"> de los trabajos</span></a>
+    <a class="btn" href="#contacto" data-evento="header-cotizar">Solicitar cotización</a>
+  </nav>
 </header>
 
 <main id="contenido">
@@ -84,6 +86,9 @@
     <article class="sys" id="cctv">
       <h3 class="sys-name" data-reveal>Cámaras CCTV</h3>
       <div class="sys-body" data-reveal style="--i:1">
+        <div class="card-media">
+          <img src="assets/productos/cctv-domo-480.webp" srcset="assets/productos/cctv-domo-480.webp 480w, assets/productos/cctv-domo-720.webp 720w" sizes="(min-width: 56em) 40vw, calc(100vw - 48px)" width="480" height="360" alt="Cámara de seguridad tipo domo, de color blanco." loading="lazy" decoding="async">
+        </div>
         <p class="sys-benefit">Vea lo que pasa, en vivo y en grabación, desde su celular.</p>
         <p>Instalamos cámaras para interiores y exteriores con grabación y acceso remoto. Usted decide qué zonas vigilar.</p>
         <a class="sys-cta" href="#cotizar" data-producto="Cámaras CCTV">Cotizar este sistema<span class="sr-only">: Cámaras CCTV</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
@@ -95,6 +100,9 @@
       <!-- [[PENDIENTE: ¿notifica al celular/central?]] Si se confirma, descripción: "Sensores en puertas, ventanas y ambientes que activan la alarma y le notifican. Se configuran por zonas según su espacio." -->
       <h3 class="sys-name" data-reveal>Alarma contra intrusión</h3>
       <div class="sys-body" data-reveal style="--i:1">
+        <div class="card-media">
+          <img src="assets/productos/alarma-kit-480.webp" srcset="assets/productos/alarma-kit-480.webp 480w, assets/productos/alarma-kit-720.webp 720w" sizes="(min-width: 56em) 40vw, calc(100vw - 48px)" width="480" height="360" alt="Kit de alarma contra intrusión: teclado con pantalla, panel de control, sensores para puertas y ventanas, sensor de movimiento y módulo de comunicación." loading="lazy" decoding="async">
+        </div>
         <p class="sys-benefit">Aviso inmediato si alguien entra sin permiso.</p>
         <p>Sensores en puertas, ventanas y ambientes que activan la alarma ante una intrusión. Se configuran por zonas según su espacio.</p>
         <a class="sys-cta" href="#cotizar" data-producto="Alarma contra intrusión">Cotizar este sistema<span class="sr-only">: Alarma contra intrusión</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
@@ -105,6 +113,9 @@
     <article class="sys" id="cercos">
       <h3 class="sys-name" data-reveal>Cercos electrificados</h3>
       <div class="sys-body" data-reveal style="--i:1">
+        <div class="card-media">
+          <img src="assets/productos/cerco-energizador-480.webp" srcset="assets/productos/cerco-energizador-480.webp 480w, assets/productos/cerco-energizador-720.webp 720w" sizes="(min-width: 56em) 40vw, calc(100vw - 48px)" width="480" height="360" alt="Energizador para cerco electrificado con sirena, control remoto y batería de respaldo." loading="lazy" decoding="async">
+        </div>
         <p class="sys-benefit">Un perímetro que disuade antes de que intenten entrar.</p>
         <p>Protección para muros y cercos perimetrales, instalada de forma profesional y conforme a la normativa vigente. Puede conectarse a su alarma.</p>
         <a class="sys-cta" href="#cotizar" data-producto="Cercos electrificados">Cotizar este sistema<span class="sr-only">: Cercos electrificados</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
@@ -113,11 +124,13 @@
     </article>
 
     <article class="sys" id="accesos-vehiculares">
-      <!-- [[PENDIENTE: confirmar tipos de portón que atienden]] -->
       <h3 class="sys-name" data-reveal>Automatización de accesos</h3>
       <div class="sys-body" data-reveal style="--i:1">
+        <div class="card-media">
+          <img src="assets/productos/cochera-kit-pistones-480.webp" srcset="assets/productos/cochera-kit-pistones-480.webp 480w, assets/productos/cochera-kit-pistones-720.webp 720w" sizes="(min-width: 56em) 40vw, calc(100vw - 48px)" width="480" height="360" alt="Kit para automatizar un portón abatible: dos brazos motorizados, tarjeta de control, dos controles remotos, herrajes y baterías." loading="lazy" decoding="async">
+        </div>
         <p class="sys-benefit">Abra y cierre sin bajar de su vehículo.</p>
-        <p>Automatización de cocheras y accesos vehiculares: motores para portones corredizos y levadizos, con control remoto y opciones de acceso para residentes, personal o visitantes.</p>
+        <p>Automatización de cocheras y accesos vehiculares: motores para portones corredizos, abatibles, plegables y levadizos, con control remoto y opciones de acceso para residentes, personal o visitantes.</p>
         <a class="sys-cta" href="#cotizar" data-producto="Automatización de cocheras y accesos">Cotizar este sistema<span class="sr-only">: Automatización de cocheras y accesos</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
         <p class="sys-ideal"><strong>Ideal para:</strong> cocheras, condominios, estacionamientos y patios de maniobra.</p>
       </div>
@@ -127,6 +140,16 @@
       <!-- [[PENDIENTE: ¿registra entradas y salidas?]] Si se confirma, descripción: "Acceso con tarjeta o llavero (tag), huella digital o código numérico, con registro de entradas y salidas." -->
       <h3 class="sys-name" data-reveal>Control de acceso</h3>
       <div class="sys-body" data-reveal style="--i:1">
+        <div class="card-media--duo">
+          <figure class="media-cell">
+            <div class="media-plate"><img src="assets/productos/acceso-barrera-240.webp" srcset="assets/productos/acceso-barrera-240.webp 240w, assets/productos/acceso-barrera-360.webp 360w" sizes="(min-width: 56em) 20vw, calc(50vw - 28px)" width="240" height="360" alt="Barrera vehicular con brazo horizontal para controlar la entrada de autos." loading="lazy" decoding="async"></div>
+            <figcaption>Barrera vehicular</figcaption>
+          </figure>
+          <figure class="media-cell">
+            <div class="media-plate"><img src="assets/productos/acceso-checador-240.webp" srcset="assets/productos/acceso-checador-240.webp 240w, assets/productos/acceso-checador-360.webp 360w" sizes="(min-width: 56em) 20vw, calc(50vw - 28px)" width="240" height="360" alt="Checador con lector de huella digital, teclado numérico y pantalla." loading="lazy" decoding="async"></div>
+            <figcaption>Checador de huella y código</figcaption>
+          </figure>
+        </div>
         <p class="sys-benefit">Decida quién entra, por dónde y cuándo.</p>
         <p>Acceso con tarjeta o llavero (tag), huella digital o código numérico.</p>
         <a class="sys-cta" href="#cotizar" data-producto="Control de acceso">Cotizar este sistema<span class="sr-only">: Control de acceso</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
@@ -135,15 +158,19 @@
     </article>
 
     <article class="sys" id="gps">
-      <!-- [[PENDIENTE: funciones extra (historial de rutas, alertas, apagado remoto) y suscripción]] -->
+      <!-- [[PENDIENTE: funciones extra (historial de rutas, alertas, apagado remoto) y monto de la anualidad]] La plataforma de rastreo es de un tercero (Tracksolid) y lleva anualidad; la marca no se nombra en el texto visible por ahora. Sin precios. -->
       <h3 class="sys-name" data-reveal>GPS vehicular</h3>
       <div class="sys-body" data-reveal style="--i:1">
+        <div class="card-media">
+          <img src="assets/productos/gps.svg" width="480" height="360" alt="Ilustración de un auto y un celular que muestra su ubicación en un mapa." loading="lazy" decoding="async">
+        </div>
         <p class="sys-benefit">Ubique su vehículo en tiempo real.</p>
-        <p>Rastreo desde su celular para autos particulares y flotas de trabajo.</p>
+        <p>Rastreo desde su celular para autos particulares y flotas de trabajo. El servicio se opera desde una app o plataforma de rastreo y lleva una anualidad por el servicio de plataforma.</p>
         <a class="sys-cta" href="#cotizar" data-producto="GPS vehicular">Cotizar este sistema<span class="sr-only">: GPS vehicular</span><svg class="icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-flecha"/></svg></a>
         <p class="sys-ideal"><strong>Ideal para:</strong> vehículos particulares, flotas de reparto y transporte.</p>
       </div>
     </article>
+    <p class="sys-note">Imágenes referenciales. Los equipos se eligen según su proyecto.</p>
   </section>
 
   <!-- ESCALA: la idea de la página. Elegir el espacio cambia el plano y la tabla. -->
@@ -257,11 +284,11 @@
   <!-- TRABAJOS (galería; vacía hasta que el cliente entregue fotos) -->
   <section id="trabajos" class="trabajos" aria-labelledby="h-trabajos">
     <div class="trabajos-head">
-      <h2 id="h-trabajos" data-reveal>Nuestros trabajos</h2>
+      <h2 id="h-trabajos" data-reveal>Fotos de nuestros trabajos</h2>
       <p class="lead" data-galeria="con-fotos" hidden>Instalaciones reales realizadas por nuestro equipo.</p>
     </div>
     <div class="gallery-empty" data-galeria="vacia">
-      <p class="lead" data-reveal>Conozca instalaciones realizadas por nuestro equipo en nuestra página de Facebook.</p>
+      <p class="lead" data-reveal>Estamos reuniendo aquí las fotos de nuestras instalaciones. Mientras tanto, puede verlas en nuestra página de Facebook.</p>
       <a class="big-link" href="https://www.facebook.com/SeprosegOficial/" target="_blank" rel="noopener noreferrer" data-evento="facebook" data-reveal style="--i:1">Ver trabajos en Facebook<svg class="icon" width="40" height="40" aria-hidden="true" focusable="false"><use href="#i-externo"/></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
     </div>
     <div class="filters" role="group" aria-label="Filtrar trabajos por tipo de espacio" hidden></div>
@@ -388,12 +415,12 @@
 <footer class="site-footer">
   <div class="foot-cols">
     <nav aria-label="Pie de página">
-      <p class="foot-title">Seproseg</p>
+      <img class="foot-logo" src="assets/marca/seproseg-horizontal-claro.svg" alt="Seproseg" width="308" height="92" loading="lazy" decoding="async">
       <ul>
         <li><a href="#sistemas">Sistemas</a></li>
         <li><a href="#escala">Escalas</a></li>
         <li><a href="#proceso">Cómo trabajamos</a></li>
-        <li data-si-galeria hidden><a href="#trabajos">Trabajos</a></li>
+        <li><a href="#trabajos">Fotos de los trabajos</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>

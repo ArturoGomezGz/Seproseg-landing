@@ -360,6 +360,11 @@ Solo combinaciones de §2.2. Nada de texto sobre fotos.
 
 ---
 
+### 8.1 Placas de producto y logo oficial (2026-10-19, spec 004)
+
+- **Placa de producto** (`.card-media`, `.card-media--duo`): primer hijo de `.sys-body`; esquinas rectas, sin sombra, 4:3 (dos placas 2:3 con rótulo en Control de acceso). Fondo `--paper-2` (en filas impares `--paper`, y `--paper-2` en `:target`) con `mix-blend-mode: multiply` para fundir el blanco del catálogo. Imágenes en `assets/productos/`, tratadas al ras sobre lienzo blanco al 88 %. Si falla una, `main.js` oculta la placa.
+- **Logo oficial** (`assets/marca/`): `seproseg-horizontal-claro.svg` en cabecera y pie (ambos sobre papel), `seproseg-simbolo-claro.svg` en cabecera < 360 px; `favicon.svg` es el icono de app. `horizontal-mono-blanco` queda disponible para fondo navy (no se usa hoy). Paleta del logo: grafito `#2A2F38`, papel `#F0F2F4`, azul hielo `#8FB1CE` / `#6A93B5`. **Pendiente de decidir** si la paleta del sitio (navy / papel / ámbar) se alinea con la del logo.
+
 ## 9. Registro de cambios
 
 - **2.0 (2026-10-16)** — rediseño (spec 002):
